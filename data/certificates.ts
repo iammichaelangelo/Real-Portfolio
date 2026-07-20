@@ -8,21 +8,39 @@ export type Certificate = {
 
 export const certificates: Certificate[] = [
   {
-    title: "Certificate Title One",
-    issuer: "Issuing Organization",
-    date: "2026",
-    image: "/images/certificates/certificate-1.svg"
+    title: "CSE Professional Eligibility",
+    issuer: "Civil Service Commission",
+    date: "2024",
+    image: "/images/certificates/certificate-1.png"
   },
   {
-    title: "Certificate Title Two",
-    issuer: "Issuing Organization",
-    date: "2026",
-    image: "/images/certificates/certificate-2.svg"
+    title: "API 101: Introduction, Methods, and Authentication",
+    issuer: "Ethel Programming Computer Programming Services",
+    date: "2025",
+    image: "/images/certificates/certificate-2.png"
   },
   {
-    title: "Certificate Title Three",
-    issuer: "Issuing Organization",
-    date: "2026",
-    image: "/images/certificates/certificate-3.svg"
+    title: "To AI or Not to AI: The Role of AI in Research",
+    issuer: "Tagpros Education and GabAI",
+    date: "2025",
+    image: "/images/certificates/certificate-3.png"
+  },
+  {
+    title: "IoT and Data Privacy: Protecting User Information",
+    issuer: "Ethel Programming Computer Programming Services",
+    date: "2025",
+    image: "/images/certificates/certificate-4.png"
+  },
+  {
+    title: "AI-Powered Future: Mastering Prompt Engineering",
+    issuer: "Department of Information and Communications Technology",
+    date: "2025",
+    image: "/images/certificates/certificate-5.png"
+  },
+  {
+    title: "Best Practices for Clean and Accessible HTML",
+    issuer: "Ethel Programming Computer Programming Services",
+    date: "2025",
+    image: "/images/certificates/certificate-6.png"
   }
 ];

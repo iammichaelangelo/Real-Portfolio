@@ -19,7 +19,7 @@ export const projects: Project[] = [
     title:"Designer Portfolio",
     subtitle:"Clean and premium portfolio website",
     tools:["Figma","Photoshop","Development","Strategy"],
-    cover:"/images/projects/designer-portfolio/cover.png",
+    cover:"/images/projects/designer-portfolio/cover1.png",
     gallery:[
       "/images/projects/designer-portfolio/cover.png",
       "/images/projects/designer-portfolio/detail-2.png",
@@ -37,7 +37,7 @@ export const projects: Project[] = [
     title:"Origami Invoice",
     subtitle:"Invoice, subscription, and payment management system",
     tools:["Laravel","PHP","MySQL","JavaScript"],
-    cover:"/images/projects/origami-invoice/cover.png",
+    cover:"/images/projects/origami-invoice/cover1.png",
     gallery:[
       "/images/projects/origami-invoice/cover.png",
       "/images/projects/origami-invoice/detail-2.png",
@@ -62,7 +62,7 @@ export const projects: Project[] = [
     title:"Social Media Designs",
     subtitle:"Campaign posts, carousels, and promotional graphics",
     tools:["Canva","Photoshop","Branding","Content"],
-    cover:"/images/projects/social-media-designs/cover.jpg",
+    cover:"/images/projects/social-media-designs/cover1.png",
     gallery:[
       "/images/projects/social-media-designs/detail-1.jpg",
       "/images/projects/social-media-designs/detail-2.jpg",
@@ -77,12 +77,42 @@ export const projects: Project[] = [
       {
         title:"Food Promotions",
         subtitle:"Restaurant offers, menu highlights, and product-focused food graphics",
-        images:["/images/projects/social-media-designs/detail-2.jpg"]
+        images:[
+          "/images/projects/social-media-designs/burger-1.png",
+          "/images/projects/social-media-designs/burger-2.png",
+          "/images/projects/social-media-designs/burger-33.png",
+          "/images/projects/social-media-designs/burger-4.png",
+          "/images/projects/social-media-designs/8.png",
+          "/images/projects/social-media-designs/9.png",
+          "/images/projects/social-media-designs/10.png",
+          "/images/projects/social-media-designs/11.png",
+          "/images/projects/social-media-designs/14.png",
+          "/images/projects/social-media-designs/16.png",
+          "/images/projects/social-media-designs/17.png",
+          "/images/projects/social-media-designs/18.png",
+        ]
       },
+            {
+        title:"Food Menu",
+        subtitle:"Restaurant offers, menu highlights, and product-focused food graphics",
+        images:[
+          "/images/projects/social-media-designs/11.5.png",
+          "/images/projects/social-media-designs/12.png", 
+          "/images/projects/social-media-designs/13.png"
+          
+        ]
+      },
+      
       {
-        title:"Campaign & Event Designs",
+        title:"Sample Logos",
         subtitle:"Event announcements, campaign materials, and community-focused visuals",
-        images:["/images/projects/social-media-designs/detail-3.jpg"]
+        images:[
+          "/images/projects/social-media-designs/4.png",
+          "/images/projects/social-media-designs/5.png",
+          "/images/projects/social-media-designs/6.png",
+          "/images/projects/social-media-designs/7.png",
+
+        ]
       }
     ],
     summary:[
@@ -93,15 +123,20 @@ export const projects: Project[] = [
   },
   {
     slug:"coffee-shop-brochure",
-    category:"Print Design",
-    title:"Coffee Shop Brochure",
+    category:"Thumbnails",
+    title:"Youtube Thumbnails",
     subtitle:"Warm and modern tri-fold brochure design",
     tools:["Canva","Photoshop","Layout","Print"],
-    cover:"/images/projects/coffee-shop-brochure/cover.jpg",
+    cover:"/images/projects/coffee-shop-brochure/cover1.png",
     gallery:[
-      "/images/projects/coffee-shop-brochure/detail-1.jpg",
-      "/images/projects/coffee-shop-brochure/detail-2.jpg",
-      "/images/projects/coffee-shop-brochure/detail-3.jpg"
+      "/images/projects/coffee-shop-brochure/cover.png",
+      "/images/projects/coffee-shop-brochure/1.png",
+      "/images/projects/coffee-shop-brochure/2.png",
+      "/images/projects/coffee-shop-brochure/3.png",
+      "/images/projects/coffee-shop-brochure/5.png",
+      "/images/projects/coffee-shop-brochure/6.png",
+      "/images/projects/coffee-shop-brochure/7.png",
+      "/images/projects/coffee-shop-brochure/8.png"
     ],
     summary:[
       {title:"Purpose",text:"A complete tri-fold brochure showing the brand story, menu, hours, and call to action."},
@@ -115,7 +150,7 @@ export const projects: Project[] = [
     title:"Video Editing Showcase",
     subtitle:"Short-form edits, podcast clips, motion text, and social videos",
     tools:["Alight Motion","CapCut","Motion","Storytelling"],
-    cover:"/images/projects/video-editing-showcase/cover.jpg",
+    cover:"/images/projects/video-editing-showcase/cover.png",
     gallery:[],
     type:"video",
     videos:[

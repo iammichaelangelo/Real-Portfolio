@@ -419,19 +419,22 @@ export default function Home(){
           <div className="tool-marquee-window">
             <div className="tool-marquee-row row-left">
               {[...[
-                ["Canva","/images/icons/canva.svg"],
-                ["Figma","/images/icons/figma.svg"],
-                ["Laravel","/images/icons/laravel.svg"],
-                ["GitHub","/images/icons/github.svg"],
-                ["Slack","/images/icons/slack.svg"],
-                ["Gmail","/images/icons/gmail.svg"]
+                ["Canva","/images/icons/canva.png"],
+                ["Figma","/images/icons/figma.png"],
+                ["Laravel","/images/icons/laravel.png"],
+                ["GitHub","/images/icons/github.png"],
+                ["Slack","/images/icons/slack.png"],
+                ["Gmail","/images/icons/gmail.png"],
+                ["HTML","/images/icons/html.png"],
+                ["CSS","/images/icons/css.png"],
               ],...[
-                ["Canva","/images/icons/canva.svg"],
-                ["Figma","/images/icons/figma.svg"],
-                ["Laravel","/images/icons/laravel.svg"],
-                ["GitHub","/images/icons/github.svg"],
-                ["Slack","/images/icons/slack.svg"],
-                ["Gmail","/images/icons/gmail.svg"]
+                ["Trello","/images/icons/trello.png"],
+                ["Figma","/images/icons/figma.png"],
+                ["Laravel","/images/icons/laravel.png"],
+                ["GitHub","/images/icons/github.png"],
+                ["Slack","/images/icons/slack.png"],
+                ["Gmail","/images/icons/gmail.png"],
+                ["Calendly","/images/icons/calendly.png"]
               ]].map(([name,icon],index)=>
                 <div className="stack-icon logo-only" key={`${name}-left-${index}`}>
                   <FadeImage src={icon} alt={name} width={42} height={42}/>
@@ -441,19 +444,22 @@ export default function Home(){
 
             <div className="tool-marquee-row row-right">
               {[...[
-                ["Shopify","/images/icons/shopify.svg"],
-                ["VS Code","/images/icons/vscode.svg"],
-                ["Google Drive","/images/icons/gdrive.svg"],
-                ["Notion","/images/icons/notion.svg"],
-                ["ChatGPT","/images/icons/chatgpt.svg"],
-                ["Photoshop","/images/icons/photoshop.svg"]
+                ["Shopify","/images/icons/shopify.png"],
+                ["VS Code","/images/icons/vscode.png"],
+                ["Google Drive","/images/icons/gdrive.png"],
+                ["Notion","/images/icons/notion.png"],
+                ["ChatGPT","/images/icons/gpt.png"],
+                ["Photoshop","/images/icons/photoshop.png"],
+                ["Photoshop","/images/icons/am.png"]
               ],...[
-                ["Shopify","/images/icons/shopify.svg"],
-                ["VS Code","/images/icons/vscode.svg"],
-                ["Google Drive","/images/icons/gdrive.svg"],
-                ["Notion","/images/icons/notion.svg"],
-                ["ChatGPT","/images/icons/chatgpt.svg"],
-                ["Photoshop","/images/icons/photoshop.svg"]
+                ["Shopify","/images/icons/deepseek.png"],
+                ["VS Code","/images/icons/claude.png"],
+                ["Google Drive","/images/icons/gemini.png"],
+                ["Notion","/images/icons/vscode.png"],
+                ["ChatGPT","/images/icons/apollo.jpeg"],
+                ["Photoshop","/images/icons/capcut.png"],
+                ["React","/images/icons/react.png"],
+                ["Javascript","/images/icons/jsjs.png"]
               ]].map(([name,icon],index)=>
                 <div className="stack-icon logo-only" key={`${name}-right-${index}`}>
                   <FadeImage src={icon} alt={name} width={42} height={42}/>
@@ -496,13 +502,7 @@ export default function Home(){
           className="cover"
         />
         <span className="photo-hi blue-note">Hi :)</span>
-        <motion.div
-          className="floating-tool"
-          animate={{y:[0,-12,0],rotate:[-8,5,-8]}}
-          transition={{duration:3.6,repeat:Infinity}}
-        >
-          M
-        </motion.div>
+
       </motion.div>
     </div>
   </motion.section>
@@ -638,12 +638,27 @@ export default function Home(){
 
     <div className="faq-rows">
       {[
-        ["What services can you provide?","I can help with administrative support, data entry, spreadsheet maintenance, customer support, social media assistance, graphic design, and Laravel development."],
-        ["Can you work with existing procedures?","Yes. I can follow established workflows, documented instructions, naming conventions, and reporting requirements carefully."],
-        ["How do you maintain accuracy?","I review source information, verify important details, double-check completed work, and report anything unclear instead of guessing."],
-        ["Can you support long-term projects?","Yes. I am looking for stable, long-term work where I can learn the business, improve the process, and become a dependable team member."],
-        ["What tools are you comfortable using?","I have experience with Google Workspace, Excel, Canva, Slack, Shopify, GitHub, Laravel, Gmail, and other remote-work tools."]
-      ].map(([question,answer],index)=>
+        [
+          "What services can you provide?",
+          "I provide administrative support, data entry, web research, spreadsheet management, email and calendar organization, customer support, social media assistance, graphic design, basic web development, and general virtual assistant services. I adapt quickly to new tools and workflows to support business operations efficiently."
+        ],
+        [
+          "Can you work with existing procedures and systems?",
+          "Absolutely. I understand the importance of consistency and accuracy when working with established processes. I can follow standard operating procedures (SOPs), documented workflows, naming conventions, reporting formats, and company guidelines while ensuring every task is completed according to your expectations."
+        ],
+        [
+          "How do you maintain accuracy and quality?",
+          "I pay close attention to detail by carefully reviewing source information, verifying important data, checking completed work before submission, and documenting any inconsistencies or concerns. If something is unclear, I ask for clarification instead of making assumptions to ensure reliable and accurate results."
+        ],
+        [
+          "Can you support long-term projects and growing businesses?",
+          "Yes. I am looking for long-term opportunities where I can build trust, understand your business, and become a dependable member of your team. I enjoy learning new systems, improving workflows, and contributing consistently as the business grows."
+        ],
+        [
+          "What tools and technologies are you familiar with?",
+          "I have experience using Google Workspace, Microsoft Office, Google Sheets, Microsoft Excel, Canva, Figma, Slack, Trello, Shopify, GitHub, Gmail, Google Drive, Notion, Visual Studio Code, PHP, JavaScript, MySQL, Laravel, and other productivity, collaboration, design, and web development tools. I am also comfortable learning new software whenever required."
+        ]
+      ].map(([question, answer]) => (
         <details className="faq-row" key={question}>
           <summary>
             <span className="faq-question-mark">?</span>
@@ -652,7 +667,7 @@ export default function Home(){
           </summary>
           <p>{answer}</p>
         </details>
-      )}
+      ))}
     </div>
   </motion.section>
 
@@ -664,11 +679,15 @@ export default function Home(){
     whileInView="show"
     viewport={{once:false,amount:.12}}
   >
-    <div className="center-heading experience-heading">
-      <p className="blue-note">#Work Experience</p>
-      <h2>Experience that helps me support your business</h2>
-      <p>Practical experience in administration, customer support, design, and web development.</p>
-    </div>
+<div className="center-heading experience-heading">
+  <p className="blue-note">#Professional Experience</p>
+  <h2>Real-world experience delivering reliable business support</h2>
+  <p>
+    From virtual assistance and customer support to creative design and web
+    development, I've helped businesses improve daily operations through
+    practical, detail-oriented solutions.
+  </p>
+</div>
 
     <motion.div
       className="experience-grid"
@@ -679,27 +698,51 @@ export default function Home(){
     >
       {[
         {
-          type:"Administrative & Data Support",
-          title:"Virtual Assistant",
-          period:"2+ Years Experience",
-          bullets:[
-            "Spreadsheet and database maintenance",
-            "Data entry, verification, and research",
-            "Daily monitoring and status reporting",
-            "Email, customer, and e-commerce support",
-            "Organized files and accurate records"
+          type: "E-commerce Virtual Assistance",
+          title: "Virtual Assistant",
+          period: "Uncle Pinoy Lechons UK • Jan 2024 – Apr 2026",
+          bullets: [
+            "Managed customer inquiries through Facebook Messenger, Instagram, and Outlook",
+            "Processed Shopify orders, delivery coordination, and customer support requests",
+            "Maintained accurate customer records and order documentation",
+            "Engaged with customers through social media to improve response time and customer satisfaction",
+            "Assisted with refunds, order updates, and general administrative tasks"
           ]
         },
         {
-          type:"Creative & Technical Support",
-          title:"Digital Creative & Web Developer",
-          period:"Design and Development",
-          bullets:[
-            "Social media and marketing graphics",
-            "Canva and visual content creation",
-            "Laravel web application development",
-            "Responsive website implementation",
-            "Testing, revisions, and documentation"
+          type: "Administrative & Data Support",
+          title: "Data Entry Virtual Assistant",
+          period: "European Client (Remote) • Jun 2025 – Jan 2026",
+          bullets: [
+            "Maintained spreadsheets and databases with high accuracy using Google Sheets and Excel",
+            "Performed data entry, verification, and daily monitoring tasks",
+            "Prepared reports and coordinated updates with remote team members",
+            "Ensured data consistency while following established workflows and procedures",
+            "Supported day-to-day administrative operations in a remote work environment"
+          ]
+        },
+        {
+          type: "Virtual Assistant Internship",
+          title: "Virtual Assistant Intern",
+          period: "The VA BAR • Jun 2026 – Present",
+          bullets: [
+            "Completed hands-on training in Administrative Support and Virtual Assistance",
+            "Created social media content using Canva and other digital tools",
+            "Learned Lead Generation, Email Marketing, and CRM workflows",
+            "Applied industry-standard productivity and communication tools",
+            "Performed practical administrative tasks and business support activities"
+          ]
+        },
+        {
+          type: "Web Development Internship",
+          title: "Front-End Developer Intern",
+          period: "Affirm Technology • Jan 2026 – Apr 2026",
+          bullets: [
+            "Developed and improved web applications using PHP, Laravel, JavaScript, HTML, CSS, and MySQL",
+            "Worked on the Origami Invoice and Origami Education systems during a 5-month internship",
+            "Implemented responsive user interfaces from design references",
+            "Collaborated using GitHub, Docker, and version control workflows",
+            "Performed testing, debugging, documentation, and feature enhancements"
           ]
         }
       ].map((job)=>
@@ -708,7 +751,7 @@ export default function Home(){
             <p className="blue-note">{job.type}</p>
             <h3>{job.title}</h3>
             <strong>{job.period}</strong>
-            <MagneticLink className="black-btn" href="#contact">Get In Touch</MagneticLink>
+            
           </div>
           <div className="experience-list">
             {job.bullets.map(item=><p key={item}><span>✓</span>{item}</p>)}
