@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="850" viewBox="0 0 1200 850">
+<rect width="1200" height="850" fill="#f5f7fa"/>
+<rect x="38" y="38" width="1124" height="774" rx="14" fill="none" stroke="#11a8ef" stroke-width="5"/>
+<rect x="62" y="62" width="1076" height="726" rx="10" fill="none" stroke="#161616" stroke-width="2"/>
+<text x="600" y="250" text-anchor="middle" font-family="Arial, sans-serif" font-size="30" fill="#11a8ef">CERTIFICATE</text>
+<text x="600" y="355" text-anchor="middle" font-family="Georgia, serif" font-size="58" fill="#161616">Replace with your certificate</text>
+<text x="600" y="425" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" fill="#666">Upload your image into public/images/certificates</text>
+<text x="600" y="475" text-anchor="middle" font-family="Arial, sans-serif" font-size="21" fill="#777">Then update data/certificates.ts</text>
+<circle cx="600" cy="610" r="54" fill="#11a8ef" opacity=".14"/>
+<text x="600" y="621" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" font-size="28" fill="#11a8ef">2</text>
+</svg>
