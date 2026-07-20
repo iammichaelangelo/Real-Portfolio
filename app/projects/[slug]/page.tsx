@@ -83,6 +83,48 @@ export default function ProjectPage({
             </motion.article>
           ))}
         </section>
+      ) : project.gallerySections?.length ? (
+        <section className="project-sectioned-gallery shell">
+          {project.gallerySections.map((section,sectionIndex)=>(
+            <motion.section
+              className="project-gallery-section"
+              key={section.title}
+              initial={{opacity:0,y:38}}
+              whileInView={{opacity:1,y:0}}
+              viewport={{once:true,amount:.1}}
+              transition={{duration:.6,delay:sectionIndex*.06}}
+            >
+              <header className="project-gallery-section-heading">
+                <div>
+                  <p className="project-gallery-section-number">0{sectionIndex+1}</p>
+                  <h2>{section.title}</h2>
+                </div>
+                <p>{section.subtitle}</p>
+              </header>
+
+              <div className={`project-gallery project-gallery-count-${section.images.length}`}>
+                {section.images.map((image,index)=>(
+                  <motion.figure
+                    key={image}
+                    className="project-gallery-item"
+                    initial={{opacity:0,y:28}}
+                    whileInView={{opacity:1,y:0}}
+                    viewport={{once:true,amount:.12}}
+                    transition={{duration:.55,delay:index*.06}}
+                  >
+                    <Image
+                      src={image}
+                      alt={`${section.title} design ${index+1}`}
+                      fill
+                      sizes="(max-width: 700px) 100vw, (max-width: 1000px) 50vw, 33vw"
+                      className="project-gallery-image"
+                    />
+                  </motion.figure>
+                ))}
+              </div>
+            </motion.section>
+          ))}
+        </section>
       ) : (
         <section className="project-gallery shell">
           {project.gallery.map((image,index)=>(

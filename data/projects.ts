@@ -6,6 +6,7 @@ export type Project = {
   tools: string[];
   cover: string;
   gallery: string[];
+  gallerySections?: {title:string;subtitle:string;images:string[]}[];
   summary: {title:string;text:string}[];
   type?: "image" | "video";
   videos?: {src:string;poster?:string;title:string}[];
@@ -66,6 +67,23 @@ export const projects: Project[] = [
       "/images/projects/social-media-designs/detail-1.jpg",
       "/images/projects/social-media-designs/detail-2.jpg",
       "/images/projects/social-media-designs/detail-3.jpg"
+    ],
+    gallerySections:[
+      {
+        title:"Promotional Pubmats",
+        subtitle:"Product advertisements, service promotions, and branded campaign posts",
+        images:["/images/projects/social-media-designs/detail-1.jpg"]
+      },
+      {
+        title:"Food Promotions",
+        subtitle:"Restaurant offers, menu highlights, and product-focused food graphics",
+        images:["/images/projects/social-media-designs/detail-2.jpg"]
+      },
+      {
+        title:"Campaign & Event Designs",
+        subtitle:"Event announcements, campaign materials, and community-focused visuals",
+        images:["/images/projects/social-media-designs/detail-3.jpg"]
+      }
     ],
     summary:[
       {title:"Purpose",text:"A collection of branded visuals for campaigns, services, and educational content."},
