@@ -72,7 +72,17 @@ export const projects: Project[] = [
       {
         title:"Promotional Pubmats",
         subtitle:"Product advertisements, service promotions, and branded campaign posts",
-        images:["/images/projects/social-media-designs/detail-1.jpg"]
+        images:[
+          "/images/projects/social-media-designs/pubs-1.png",
+          "/images/projects/social-media-designs/pubs-2.png",
+          "/images/projects/social-media-designs/pubs-3.png",
+          "/images/projects/social-media-designs/pubs-4.png",
+          "/images/projects/social-media-designs/pubs-5.png",
+          "/images/projects/social-media-designs/pubs-6.png",
+          "/images/projects/social-media-designs/pubs-7.png",
+          "/images/projects/social-media-designs/pubs-8.png",
+
+        ]
       },
       {
         title:"Food Promotions",
@@ -190,9 +200,20 @@ export const projects: Project[] = [
     tools:["Canva","Content","Branding","SMM"],
     cover:"/images/projects/virtual-assistant-content/cover.jpg",
     gallery:[
-      "/images/projects/virtual-assistant-content/detail-1.jpg",
-      "/images/projects/virtual-assistant-content/detail-2.jpg",
-      "/images/projects/virtual-assistant-content/detail-3.jpg"
+      "/images/projects/virtual-assistant-content/post-1.png",
+      "/images/projects/virtual-assistant-content/post-2.png",
+      "/images/projects/virtual-assistant-content/post-3.png",
+      "/images/projects/virtual-assistant-content/post-4.png",
+      "/images/projects/virtual-assistant-content/post-5.png",
+      "/images/projects/virtual-assistant-content/post-6.png",
+      "/images/projects/virtual-assistant-content/post-7.png",
+      "/images/projects/virtual-assistant-content/post-8.png",
+      "/images/projects/virtual-assistant-content/post-9.png",
+      "/images/projects/virtual-assistant-content/post-10.png",
+      "/images/projects/virtual-assistant-content/post-11.png",
+      "/images/projects/virtual-assistant-content/post-12.png",
+      "/images/projects/virtual-assistant-content/post-13.png",
+      "/images/projects/virtual-assistant-content/post-14.png",
     ],
     summary:[
       {title:"Purpose",text:"Content that explains virtual assistant services, tools, benefits, and workflows."},
