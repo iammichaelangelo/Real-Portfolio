@@ -6,7 +6,8 @@ export type Project = {
   tools: string[];
   cover: string;
   gallery: string[];
-  gallerySections?: {title:string;subtitle:string;images:string[]}[];
+  gallerySections?: {title:string;subtitle:string;images:string[];liveUrl?:string;liveLabel?:string}[];
+  liveUrl?: string;
   summary: {title:string;text:string}[];
   type?: "image" | "video";
   videos?: {src:string;poster?:string;title:string}[];
@@ -14,46 +15,74 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    slug:"designer-portfolio",
-    category:"Web Design",
-    title:"Designer Portfolio",
-    subtitle:"Clean and premium portfolio website",
-    tools:["Figma","Photoshop","Development","Strategy"],
-    cover:"/images/projects/designer-portfolio/cover1.png",
-    gallery:[
+    slug: "designer-portfolio",
+    category: "Web Design & Development",
+    title: "Website Projects",
+    subtitle: "Responsive websites and web applications presented through dedicated project galleries",
+    tools: [
+      "VS Code",
+      "React",
+      "Laravel",
+      "PHP",
+      "MySQL",
+      "CSS",
+      "GitHub",
+      "Vercel",
+      "JavaScript"
+    ],
+    cover: "/images/projects/designer-portfolio/cover1.png",
+    gallery: [
       "/images/projects/designer-portfolio/cover.png",
       "/images/projects/designer-portfolio/detail-2.png",
-      "/images/projects/designer-portfolio/detail-3.png"
-    ],
-    summary:[
-      {title:"Purpose",text:"A polished portfolio designed to present creative work, experience, and services clearly."},
-      {title:"Approach",text:"Large typography, spacious sections, responsive cards, and subtle interaction create a premium experience."},
-      {title:"Result",text:"A modern responsive portfolio that helps visitors understand the creator's strengths quickly."}
-    ]
-  },
-  {
-    slug:"origami-invoice",
-    category:"Laravel Web App",
-    title:"Origami Invoice",
-    subtitle:"Invoice, subscription, and payment management system",
-    tools:["Laravel","PHP","MySQL","JavaScript"],
-    cover:"/images/projects/origami-invoice/cover1.png",
-    gallery:[
+      "/images/projects/designer-portfolio/detail-3.png",
       "/images/projects/origami-invoice/cover.png",
       "/images/projects/origami-invoice/detail-2.png",
-      "/images/projects/origami-invoice/detail-3.png",
-      "/images/projects/origami-invoice/detail-4.png",
-      "/images/projects/origami-invoice/detail-5.png",
-      "/images/projects/origami-invoice/detail-6.png",
-      "/images/projects/origami-invoice/detail-7.png",
-      "/images/projects/origami-invoice/detail-8.png",
-      "/images/projects/origami-invoice/detail-9.png",
-      "/images/projects/origami-invoice/detail-10.png"
+      "/images/projects/origami-invoice/detail-3.png"
     ],
-    summary:[
-      {title:"Purpose",text:"A web app for managing clients, invoices, payments, subscriptions, and reports."},
-      {title:"Contribution",text:"Improved navigation, redirects, role handling, and multiple Laravel application sections."},
-      {title:"Result",text:"A clearer and more consistent workflow for administrators and clients."}
+    gallerySections: [
+      {
+        title: "Professional Portfolio Website",
+        subtitle: "A custom responsive portfolio for presenting creative, administrative, and technical services",
+        liveUrl: "/",
+        liveLabel: "Visit Live Portfolio",
+        images: [
+          "/images/projects/designer-portfolio/cover.png",
+          "/images/projects/designer-portfolio/detail-2.png",
+          "/images/projects/designer-portfolio/detail-3.png"
+        ]
+      },
+      {
+        title: "Origami Invoice",
+        subtitle: "A Laravel-based invoice, client, payment, subscription, and reporting management system",
+        liveUrl: "https://origami-education.com/",
+        liveLabel: "Visit Live Website",
+        images: [
+          "/images/projects/origami-invoice/cover.png",
+          "/images/projects/origami-invoice/detail-2.png",
+          "/images/projects/origami-invoice/detail-3.png",
+          "/images/projects/origami-invoice/detail-4.png",
+          "/images/projects/origami-invoice/detail-5.png",
+          "/images/projects/origami-invoice/detail-6.png",
+          "/images/projects/origami-invoice/detail-7.png",
+          "/images/projects/origami-invoice/detail-8.png",
+          "/images/projects/origami-invoice/detail-9.png",
+          "/images/projects/origami-invoice/detail-10.png"
+        ]
+      }
+    ],
+    summary: [
+      {
+        title: "Purpose",
+        text: "Showcase multiple website projects in one organized portfolio category instead of presenting only a single web application."
+      },
+      {
+        title: "Approach",
+        text: "Each website has its own title, description, screenshot gallery, and optional live-site link for deployed projects."
+      },
+      {
+        title: "Result",
+        text: "Potential clients can compare different website styles, inspect the interfaces, and directly visit available live builds."
+      }
     ]
   },
   {
@@ -61,7 +90,7 @@ export const projects: Project[] = [
     category:"Graphic Design",
     title:"Social Media Designs",
     subtitle:"Campaign posts, carousels, and promotional graphics",
-    tools:["Canva","Photoshop","Branding","Content"],
+    tools:["Canva","Photoshop","Pinterest","Freepik"],
     cover:"/images/projects/social-media-designs/cover1.png",
     gallery:[
       "/images/projects/social-media-designs/detail-1.jpg",
@@ -102,9 +131,9 @@ export const projects: Project[] = [
           "/images/projects/social-media-designs/18.png",
         ]
       },
-            {
+      {
         title:"Food Menu",
-        subtitle:"Restaurant offers, menu highlights, and product-focused food graphics",
+        subtitle:"Structured menu layouts featuring food selections, pricing, and clear visual hierarchy",
         images:[
           "/images/projects/social-media-designs/11.5.png",
           "/images/projects/social-media-designs/12.png", 
@@ -112,18 +141,19 @@ export const projects: Project[] = [
           
         ]
       },
-      
       {
-        title:"Sample Logos",
-        subtitle:"Event announcements, campaign materials, and community-focused visuals",
+        title:"Product Promotion",
+        subtitle:"Product-focused advertisements created to highlight features, benefits, and promotional offers",
         images:[
-          "/images/projects/social-media-designs/4.png",
-          "/images/projects/social-media-designs/5.png",
-          "/images/projects/social-media-designs/6.png",
-          "/images/projects/social-media-designs/7.png",
-
+          "/images/projects/social-media-designs/42.png",
+          "/images/projects/social-media-designs/43.png", 
+          "/images/projects/social-media-designs/44.png", 
+          "/images/projects/social-media-designs/45.png"
+          
         ]
       }
+      
+
     ],
     summary:[
       {title:"Purpose",text:"A collection of branded visuals for campaigns, services, and educational content."},
@@ -133,10 +163,31 @@ export const projects: Project[] = [
   },
   {
     slug:"coffee-shop-brochure",
+    category:"Habits",
+    title:"Personal Projects",
+    subtitle:"Eye-catching thumbnails designed to improve clicks, readability, and viewer engagement",
+    tools:["Canva","Photoshop","Pinterest","Freepik"],
+    cover:"/images/projects/habits/cover.png",
+    gallery:[
+      "/images/projects/habits/habit-1.png",
+      "/images/projects/habits/habit-2.png",
+      "/images/projects/habits/habit-3.png",
+      "/images/projects/habits/habit-4.png",
+      "/images/projects/habits/habit-5.png",
+
+    ],
+    summary:[
+      {title:"Purpose",text:"A collection of personal projects that showcase productivity, habit tracking, learning resources, and self-improvement ideas."},
+      {title:"Approach",text:"Designed with clean, organized layouts that make information easy to understand and visually engaging."},
+      {title:"Result",text:"Creative personal projects that demonstrate consistency, organization, and practical design skills."}
+    ]
+  },
+    {
+    slug:"youtube-thumbnails",
     category:"Thumbnails",
-    title:"Youtube Thumbnails",
-    subtitle:"Warm and modern tri-fold brochure design",
-    tools:["Canva","Photoshop","Layout","Print"],
+    title:"YouTube Thumbnails",
+    subtitle:"Eye-catching thumbnails designed to improve clicks, readability, and viewer engagement",
+    tools:["Canva","Photoshop","Pinterest","Freepik"],
     cover:"/images/projects/coffee-shop-brochure/cover1.png",
     gallery:[
       "/images/projects/coffee-shop-brochure/cover.png",
@@ -149,56 +200,57 @@ export const projects: Project[] = [
       "/images/projects/coffee-shop-brochure/8.png"
     ],
     summary:[
-      {title:"Purpose",text:"A complete tri-fold brochure showing the brand story, menu, hours, and call to action."},
-      {title:"Approach",text:"Warm imagery and practical panel organization maintain consistency inside and outside."},
-      {title:"Result",text:"A print-ready marketing piece suitable for customer handouts and events."}
-    ]
-  },
-  {
-    slug:"video-editing-showcase",
-    category:"Video Editing",
-    title:"Video Editing Showcase",
-    subtitle:"Short-form edits, podcast clips, motion text, and social videos",
-    tools:["Alight Motion","CapCut","Motion","Storytelling"],
-    cover:"/images/projects/video-editing-showcase/cover.png",
-    gallery:[],
-    type:"video",
-    videos:[
-      {src:"/videos/video-editing/showcase-1.mp4",poster:"/images/projects/video-editing-showcase/detail-1.jpg",title:"Podcast Motion Edit"},
-      {src:"/videos/video-editing/showcase-2.mp4",poster:"/images/projects/video-editing-showcase/detail-2.jpg",title:"Short-Form Social Edit"},
-      {src:"/videos/video-editing/showcase-3.mp4",poster:"/images/projects/video-editing-showcase/detail-3.jpg",title:"Typography and Motion Edit"}
-    ],
-    summary:[
-      {title:"Editing Style",text:"Clean cuts, animated captions, pacing, zooms, sound effects, and visual emphasis."},
-      {title:"Content Types",text:"Podcast clips, educational shorts, promotional edits, and social media videos."},
-      {title:"Goal",text:"Turn raw footage into engaging edits that hold attention and communicate clearly."}
+      {title:"Purpose",text:"Create compelling YouTube thumbnails that capture attention and encourage viewers to click."},
+      {title:"Approach",text:"Used bold typography, expressive compositions, strong contrast, and clear visual hierarchy to maximize readability."},
+      {title:"Result",text:"Professional thumbnail concepts suitable for educational, entertainment, lifestyle, and promotional content."}
     ]
   },
   {
     slug:"student-campaign-posters",
-    category:"Campaign Design",
-    title:"Student Campaign Posters",
-    subtitle:"Modern and believable student election materials",
-    tools:["Canva","Photoshop","Layout","Typography"],
-    cover:"/images/projects/student-campaign-posters/cover.jpg",
+    category:"Design",
+    title:"Brochures",
+    subtitle:"Professional brochure layouts for brands, products, services, and promotional campaigns",
+    tools:["Canva","Photoshop","Pinterest","Freepik"],
+    cover:"/images/projects/student-campaign-posters/cover.png",
     gallery:[
-      "/images/projects/student-campaign-posters/detail-1.jpg",
-      "/images/projects/student-campaign-posters/detail-2.jpg",
-      "/images/projects/student-campaign-posters/detail-3.jpg"
+      "/images/projects/student-campaign-posters/2.png",
+      "/images/projects/student-campaign-posters/3.png",
+      "/images/projects/student-campaign-posters/4.png",
+      "/images/projects/student-campaign-posters/5.png",
+      "/images/projects/student-campaign-posters/6.png",
+      "/images/projects/student-campaign-posters/7.png",
+      "/images/projects/student-campaign-posters/8.png",
+      "/images/projects/student-campaign-posters/9.png",
+      "/images/projects/student-campaign-posters/10.png",
+      "/images/projects/student-campaign-posters/11.png",
+      "/images/projects/student-campaign-posters/12.png",
+      "/images/projects/student-campaign-posters/13.png",
+      "/images/projects/student-campaign-posters/14.png",
+      "/images/projects/student-campaign-posters/15.png",
+      "/images/projects/student-campaign-posters/16.png",
+      "/images/projects/student-campaign-posters/17.png",
     ],
     summary:[
-      {title:"Purpose",text:"Original campaign posters with strong candidate focus and clear information hierarchy."},
-      {title:"Approach",text:"Professional cutouts, layered shapes, bold typography, and balanced school branding."},
-      {title:"Result",text:"Campaign visuals suitable for social posts, print, and election announcements."}
+      {title:"Purpose",text:"Design modern brochures that communicate information clearly while strengthening the identity of each featured brand or organization."},
+      {title:"Approach",text:"Applied clean panel layouts, balanced typography, professional imagery, and consistent visual hierarchy across each design."},
+      {title:"Result",text:"Print-ready brochure concepts suitable for restaurants, coffee shops, businesses, events, and promotional marketing."}
     ]
   },
-  {
+      {
     slug:"virtual-assistant-content",
     category:"Social Media",
     title:"Virtual Assistant Content",
-    subtitle:"Educational carousels, service posts, and reels",
-    tools:["Canva","Content","Branding","SMM"],
-    cover:"/images/projects/virtual-assistant-content/cover.jpg",
+    subtitle:"Educational carousels, service posts, reels, and branded content created for Facebook, Instagram, TikTok, and LinkedIn",
+    tools:[
+      "Canva",
+      "Photoshop",
+      "Pinterest",
+      "Freepik",
+      "Meta",
+      "Buffer",
+      "Sheets"
+    ],
+    cover:"/images/projects/virtual-assistant-content/cover.png",
     gallery:[
       "/images/projects/virtual-assistant-content/post-1.png",
       "/images/projects/virtual-assistant-content/post-2.png",
@@ -224,19 +276,24 @@ export const projects: Project[] = [
   {
     slug:"food-brand-designs",
     category:"Brand Design",
-    title:"Food Brand Designs",
-    subtitle:"Menus, promotions, and product-focused social visuals",
-    tools:["Canva","Photoshop","Branding","Food Design"],
-    cover:"/images/projects/food-brand-designs/cover.jpg",
+    title:"Brand Identity",
+    subtitle:"Logo systems, color palettes, typography, and branded visual applications",
+    tools:["Canva","Photoshop","Pinterest","Freepik"],
+    cover:"/images/projects/food-brand-designs/cover.png",
     gallery:[
-      "/images/projects/food-brand-designs/detail-1.jpg",
-      "/images/projects/food-brand-designs/detail-2.jpg",
-      "/images/projects/food-brand-designs/detail-3.jpg"
+      "/images/projects/social-media-designs/4.png",
+      "/images/projects/social-media-designs/5.png",
+      "/images/projects/social-media-designs/6.png",
+      "/images/projects/social-media-designs/7.png",
+      "/images/projects/food-brand-designs/21.png",
+      "/images/projects/food-brand-designs/23.png",
+      "/images/projects/food-brand-designs/22.png",
+      "/images/projects/food-brand-designs/24.png",
     ],
     summary:[
-      {title:"Purpose",text:"Promotional visuals for food businesses, menus, special offers, and featured products."},
-      {title:"Approach",text:"Appetizing imagery, strong pricing hierarchy, and clear brand personality."},
-      {title:"Result",text:"Flexible marketing designs suitable for digital posts and printed menus."}
+      {title:"Purpose",text:"Develop memorable brand identities that create a consistent visual presence across digital and print materials."},
+      {title:"Approach",text:"Designed logos, color palettes, typography systems, brand applications, and marketing assets with consistency and flexibility in mind."},
+      {title:"Result",text:"Professional branding presentations that help businesses establish a recognizable and cohesive visual identity."}
     ]
   }
 ];

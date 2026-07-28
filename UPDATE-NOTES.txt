@@ -1,0 +1,24 @@
+LEADFLOW CONTACT FORM UPDATE
+
+Updated:
+- Contact title changed to "Start Your Project"
+- Added Full Name
+- Added Company (optional)
+- Added Service Needed dropdown
+- Added Estimated Budget dropdown
+- Replaced Subject with Project Details
+- Updated client-side payload
+- Updated /api/contact validation and Resend email content
+- Updated n8n webhook payload: name, email, company, service, budget, message
+- Added responsive and dark-mode styling for dropdown fields
+- Added N8N_WEBHOOK_URL to .env.example
+
+Validation:
+- TypeScript check completed successfully with no errors.
+- Full Next.js production build could not complete in the workspace because the environment could not download the platform SWC package (HTTP 503). This was an environment/network limitation, not a TypeScript error.
+
+Before running:
+1. Copy .env.example to .env.local
+2. Add your real Resend and n8n values
+3. Run npm install
+4. Run npm run dev

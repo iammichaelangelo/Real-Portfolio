@@ -1,0 +1,28 @@
+WEBSITE PROJECTS UPDATE
+
+Changes made:
+- Combined the previous Designer Portfolio and Origami Invoice cards into one Website Projects showcase.
+- Added separate website subsections, similar to the Social Media Designs project sections.
+- Added a screenshot gallery for each website.
+- Added an optional live-site button for every website subsection.
+- The Professional Portfolio Website currently links back to the deployed portfolio homepage using liveUrl: "/".
+- Origami Invoice has no live-site button because no public deployment URL was supplied.
+
+HOW TO ADD ANOTHER WEBSITE
+Open data/projects.ts and add another item inside the Website Projects gallerySections array:
+
+{
+  title: "Website Name",
+  subtitle: "Short website description",
+  liveUrl: "https://your-live-website.com",
+  liveLabel: "Visit Live Site",
+  images: [
+    "/images/projects/your-folder/screenshot-1.png",
+    "/images/projects/your-folder/screenshot-2.png"
+  ]
+}
+
+Then place the screenshots inside:
+public/images/projects/your-folder/
+
+The Visit Live Site button is displayed only when liveUrl is provided.

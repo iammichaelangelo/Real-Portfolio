@@ -4,7 +4,7 @@ import Link from "next/link";
 import {AnimatePresence,motion,useScroll,useTransform} from "framer-motion";
 import {ArrowUp,Menu,Moon,RotateCcw,Sun,ChevronLeft,ChevronRight,X} from "lucide-react";
 import {FormEvent,useEffect,useRef,useState} from "react";
-
+import { Download } from "lucide-react";
 import {projects} from "@/data/projects";
 import {certificates} from "@/data/certificates";
 import {useRouter} from "next/navigation";
@@ -18,6 +18,7 @@ const stagger = {
  hidden:{},
  show:{transition:{staggerChildren:.14}}
 };
+
 
 
 function MagneticLink({
@@ -68,6 +69,7 @@ function FadeImage(props:React.ComponentProps<typeof Image>){
 export default function Home(){
  const router=useRouter();
  const [flipped,setFlipped]=useState(false);
+ const [mobileMenuOpen,setMobileMenuOpen]=useState(false);
  const [formStatus,setFormStatus]=useState<"idle"|"sending"|"success"|"error">("idle");
  const [showBackToTop,setShowBackToTop]=useState(false);
  const [worksPage,setWorksPage]=useState(0);
@@ -141,8 +143,11 @@ export default function Home(){
    const form = event.currentTarget;
    const formData = new FormData(form);
    const payload = {
+     name:String(formData.get("name") || ""),
      email:String(formData.get("email") || ""),
-     subject:String(formData.get("subject") || ""),
+     company:String(formData.get("company") || ""),
+     service:String(formData.get("service") || ""),
+     budget:String(formData.get("budget") || ""),
      message:String(formData.get("message") || "")
    };
 
@@ -220,7 +225,7 @@ export default function Home(){
    transition={{duration:.7}}
   >
     <a className="logo" href="#">Michael Angelo</a>
-    <nav><a href="#portfolio">Portfolio</a><a href="#certificates">Certificates</a><a href="#experience">Experience</a><a href="#contact">Contact</a></nav>
+    <nav><a href="#portfolio">Portfolio</a><a href="#certificates">Certificates</a><a href="#experience">Experience</a><a href="#testimonials">Testimonials</a><a href="#contact">Contact</a></nav>
     <MagneticLink className="black-btn" href="#contact">Get In Touch</MagneticLink>
     <button
       className="theme-toggle"
@@ -230,8 +235,48 @@ export default function Home(){
     >
       {darkMode ? <Sun size={17}/> : <Moon size={17}/>}
     </button>
-    <button className="mobile-menu"><Menu/></button>
+    <button
+      type="button"
+      className="mobile-menu"
+      onClick={()=>setMobileMenuOpen((open)=>!open)}
+      aria-label={mobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+      aria-expanded={mobileMenuOpen}
+      aria-controls="mobile-navigation"
+    >
+      {mobileMenuOpen ? <X size={22}/> : <Menu size={22}/>}
+    </button>
   </motion.header>
+
+  <AnimatePresence>
+    {mobileMenuOpen && (
+      <>
+        <motion.button
+          type="button"
+          className="mobile-menu-backdrop"
+          aria-label="Close navigation menu"
+          onClick={()=>setMobileMenuOpen(false)}
+          initial={{opacity:0}}
+          animate={{opacity:1}}
+          exit={{opacity:0}}
+        />
+        <motion.nav
+          id="mobile-navigation"
+          className="mobile-nav-panel"
+          initial={{opacity:0,y:-14}}
+          animate={{opacity:1,y:0}}
+          exit={{opacity:0,y:-14}}
+          transition={{duration:.22}}
+        >
+          <a href="#portfolio" onClick={()=>setMobileMenuOpen(false)}>Portfolio</a>
+          <a href="#certificates" onClick={()=>setMobileMenuOpen(false)}>Certificates</a>
+          <a href="#experience" onClick={()=>setMobileMenuOpen(false)}>Experience</a>
+          <a href="#testimonials" onClick={()=>setMobileMenuOpen(false)}>Testimonials</a>
+          <a href="#contact" onClick={()=>setMobileMenuOpen(false)}>Contact</a>
+          <a className="black-btn mobile-nav-cta" href="#contact" onClick={()=>setMobileMenuOpen(false)}>Get In Touch</a>
+        </motion.nav>
+      </>
+    )}
+  </AnimatePresence>
 
   <section className="hero shell">
     <div className="giant-name-layer">
@@ -276,15 +321,34 @@ export default function Home(){
                 <span className="blue-note">#My Experience</span>
                 <RotateCcw size={17}/>
               </div>
-              <h3>Experience</h3>
-              <p>Virtual Assistance &amp; Data Support</p>
-              <p>Social Media &amp; Graphic Design</p>
-              <p>Customer and E-commerce Support</p>
-              <p>Laravel Web Development</p>
 
-              <h3>Tools I Use</h3>
-              <p>Canva · Slack · Google Workspace</p>
-              <p>Shopify · GitHub · Laravel</p>
+              <h3>Experience</h3>
+              <div className="flip-badge-list">
+                <span>Web Development</span>
+                <span>Virtual Assistance</span>
+                <span>Data Entry</span>
+                <span>Graphic Design</span>
+                <span>and more</span>
+              </div>
+
+              <h3>Tech Stack</h3>
+              <div className="flip-stack">
+                <span>Laravel</span>
+                <span>PHP</span>
+                <span>MySQL</span>
+                <span>Next.js</span>
+                <span>TypeScript</span>
+                <span>Javascript</span>
+              </div>
+
+              <h3>Tools</h3>
+              <div className="flip-stack flip-tools">
+                <span>Canva</span>
+                <span>CapCut</span>
+                <span>Slack</span>
+                <span>and more</span>
+              </div>
+
               <span className="flip-hint">Click again to return</span>
             </div>
           </div>
@@ -299,15 +363,19 @@ export default function Home(){
       </motion.div>
     </motion.div>
 
-    <motion.a
-      className="template-pill"
-      href="#portfolio"
-      initial={{opacity:0,x:35}}
-      animate={{opacity:1,x:0}}
-      transition={{delay:.8,duration:.7}}
-    >
-      View My Portfolio
-    </motion.a>
+<motion.a
+  className="template-pill"
+  href="/resume/Michael-Angelo-L.-Acuña_RESUME.pdf"
+  download
+  initial={{ opacity: 0, x: 35 }}
+  animate={{ opacity: 1, x: 0 }}
+  whileHover={{ scale: 1.05 }}
+  whileTap={{ scale: 0.97 }}
+  transition={{ delay: .8, duration: .7 }}
+>
+  <Download size={14} strokeWidth={2.2} />
+  <span>Download My Resume</span>
+</motion.a>
   </section>
 
   <motion.section
@@ -508,6 +576,7 @@ export default function Home(){
   </motion.section>
 
 
+
   <motion.section
     id="certificates"
     className="certificates-section"
@@ -518,49 +587,110 @@ export default function Home(){
   >
     <div className="certificates-inner shell">
       <div className="center-heading certificates-heading">
-        <p className="blue-note">#Certificates</p>
-        <h2>Training, Learning, and Achievements</h2>
-        <p>Certificates that support my administrative, creative, and technical skills.</p>
+        <p className="blue-note">#Education & Certifications</p>
+        <h2>Education, Academic Achievements & Professional Certifications</h2>
+        <p>
+          My educational background, academic recognition, and professional certifications.
+        </p>
       </div>
 
-      <motion.div
-        className="certificates-grid"
-        variants={stagger}
-        initial="hidden"
-        whileInView="show"
-        viewport={{once:false,amount:.08}}
-      >
-        {certificates.map((certificate)=>(
-          <motion.article
-            className="certificate-card"
-            key={`${certificate.title}-${certificate.image}`}
-            variants={reveal}
-            whileHover={{y:-7}}
-          >
-            <button
-              type="button"
-              className="certificate-open"
-              onClick={()=>setSelectedCertificate(certificate)}
-              aria-label={`View ${certificate.title} in full screen`}
-            >
-              <div className="certificate-image">
-                <FadeImage
-                  src={certificate.image}
-                  alt={`${certificate.title} certificate`}
-                  fill
-                  sizes="(max-width: 700px) 100vw, (max-width: 1050px) 50vw, 25vw"
-                  className="certificate-cover"
-                />
-              </div>
-              <div className="certificate-info">
-                <h3>{certificate.title}</h3>
-                <p>{certificate.issuer}</p>
-                <span>{certificate.date}</span>
-              </div>
-            </button>
-          </motion.article>
-        ))}
-      </motion.div>
+      <div className="certificate-category-block">
+        <div className="certificate-category-heading">
+          <p className="blue-note">#Academic Achievements</p>
+          <h3>Education and Academic Recognition</h3>
+        </div>
+
+        <motion.div
+          className="certificates-grid"
+          variants={stagger}
+          initial="hidden"
+          whileInView="show"
+          viewport={{once:false,amount:.08}}
+        >
+          {certificates
+            .filter((certificate)=>certificate.category==="academic")
+            .map((certificate)=>(
+              <motion.article
+                className="certificate-card"
+                key={`${certificate.title}-${certificate.image}`}
+                variants={reveal}
+                whileHover={{y:-7}}
+              >
+                <button
+                  type="button"
+                  className="certificate-open"
+                  onClick={()=>setSelectedCertificate(certificate)}
+                  aria-label={`View ${certificate.title} in full screen`}
+                >
+                  <div className="certificate-image">
+                    <FadeImage
+                      src={certificate.image}
+                      alt={`${certificate.title} certificate`}
+                      fill
+                      sizes="(max-width: 700px) 100vw, (max-width: 1050px) 50vw, 25vw"
+                      className="certificate-cover"
+                    />
+                  </div>
+
+                  <div className="certificate-info">
+                    <h3>{certificate.title}</h3>
+                    <p>{certificate.issuer}</p>
+                    <span>{certificate.date}</span>
+                  </div>
+                </button>
+              </motion.article>
+            ))}
+        </motion.div>
+      </div>
+
+      <div className="certificate-category-block">
+        <div className="certificate-category-heading">
+          <p className="blue-note">#Professional Certifications</p>
+          <h3>Training and Professional Development</h3>
+        </div>
+
+        <motion.div
+          className="certificates-grid"
+          variants={stagger}
+          initial="hidden"
+          whileInView="show"
+          viewport={{once:false,amount:.08}}
+        >
+          {certificates
+            .filter((certificate)=>certificate.category==="professional")
+            .map((certificate)=>(
+              <motion.article
+                className="certificate-card"
+                key={`${certificate.title}-${certificate.image}`}
+                variants={reveal}
+                whileHover={{y:-7}}
+              >
+                <button
+                  type="button"
+                  className="certificate-open"
+                  onClick={()=>setSelectedCertificate(certificate)}
+                  aria-label={`View ${certificate.title} in full screen`}
+                >
+                  <div className="certificate-image">
+                    <FadeImage
+                      src={certificate.image}
+                      alt={`${certificate.title} certificate`}
+                      fill
+                      sizes="(max-width: 700px) 100vw, (max-width: 1050px) 50vw, 25vw"
+                      className="certificate-cover"
+                    />
+                  </div>
+
+                  <div className="certificate-info">
+                    <h3>{certificate.title}</h3>
+                    <p>{certificate.issuer}</p>
+                    <span>{certificate.date}</span>
+                  </div>
+                </button>
+              </motion.article>
+            ))}
+        </motion.div>
+      </div>
     </div>
   </motion.section>
 
@@ -759,6 +889,112 @@ export default function Home(){
         </motion.article>
       )}
     </motion.div>
+      </motion.section>
+
+      <motion.section
+        id="testimonials"
+        className="testimonials-section shell"
+        variants={reveal}
+        initial="hidden"
+        whileInView="show"
+        viewport={{once:false,amount:.14}}
+      >
+        <div className="testimonials-heading">
+          <div>
+            <p className="blue-note">#Client Feedback</p>
+            <h2>What People Say About My Work</h2>
+          </div>
+          <p>
+            A small collection of feedback from people I have supported through
+            administrative, creative, and technical work.
+          </p>
+        </div>
+
+    <motion.div
+      className="testimonials-grid"
+      variants={stagger}
+      initial="hidden"
+      whileInView="show"
+      viewport={{once:false,amount:.1}}
+    >
+      {[
+        {
+          quote:
+            "I'm happy and glad, Michael. Keep up the good work. Be focused always. I'm happy to provide a reference for your future projects if needed.",
+          context:
+            "Alexander appreciated my work, encouraged me to continue improving, and even offered to be a reference for future opportunities.",
+          name: "Alexander Guinid Jr.",
+          role: "Owner, Uncle Pinoy"
+        },
+        {
+          quote:
+            "Michael consistently worked quickly and accurately. His performance, reliability, and attention to detail showed that he was capable of taking on greater responsibilities.",
+          context:
+            "This testimonial summarizes feedback I received from my former European client, who recognized my speed, accuracy, and potential for a higher-level role.",
+          name: "Former European Client",
+          role: "Administrative & Data Support"
+        },
+        {
+          quote:
+            "Michael consistently delivered quality work, completed tasks independently, and required very little supervision. He quickly adapted to new tasks and worked well with the team.",
+          context:
+            "This testimonial summarizes feedback from my supervisor at Affirm Technology, highlighting my ability to work independently, learn quickly, and earn the team's trust.",
+          name: "Project Supervisor",
+          role: "Affirm Technology"
+        }
+      ].map((testimonial,index)=>(
+        <motion.article
+          className="testimonial-card"
+          key={`${testimonial.role}-${index}`}
+          variants={reveal}
+          whileHover={{y:-8}}
+        >
+          <div className="testimonial-card-top">
+            <span
+              className="testimonial-quote-mark"
+              aria-hidden="true"
+            >
+              “
+            </span>
+
+            <div
+              className="testimonial-stars"
+              aria-label="Five-star feedback"
+            >
+              <span>★</span>
+              <span>★</span>
+              <span>★</span>
+              <span>★</span>
+              <span>★</span>
+            </div>
+          </div>
+
+          <blockquote>
+            “{testimonial.quote}”
+          </blockquote>
+
+          <p className="testimonial-context">
+            <strong>Context:</strong> {testimonial.context}
+          </p>
+
+          <footer className="testimonial-author">
+            <span
+              className="testimonial-avatar"
+              aria-hidden="true"
+            >
+              {testimonial.name.charAt(0)}
+            </span>
+
+            <div>
+              <strong>{testimonial.name}</strong>
+              <p>{testimonial.role}</p>
+            </div>
+          </footer>
+        </motion.article>
+      ))}
+    </motion.div>
+
+
   </motion.section>
 
   <motion.section
@@ -771,54 +1007,97 @@ export default function Home(){
   >
     <div className="direct-contact-copy">
       <p className="blue-note">#Contact</p>
-      <h2>Send Me a Message</h2>
+      <h2>Start Your Project</h2>
       <p>
-        Share your email, subject, and message here. The form sends directly
-        from the website without opening Gmail or another mail application.
+        Tell me about your project. The more details you provide, the better I
+        can understand your goals and recommend the right solution.
       </p>
     </div>
 
     <form className="direct-contact-form" onSubmit={handleContactSubmit}>
-      <label>
-        Your Email
-        <input
-          type="email"
-          name="email"
-          placeholder="you@example.com"
-          required
-        />
-      </label>
+      <div className="contact-form-grid">
+        <label>
+          Full Name
+          <input
+            type="text"
+            name="name"
+            placeholder="Your name"
+            autoComplete="name"
+            required
+          />
+        </label>
 
-      <label>
-        Subject
-        <input
-          type="text"
-          name="subject"
-          placeholder="Project inquiry"
-          required
-        />
-      </label>
+        <label>
+          Your Email
+          <input
+            type="email"
+            name="email"
+            placeholder="you@example.com"
+            autoComplete="email"
+            required
+          />
+        </label>
 
-      <label>
-        Message
-        <textarea
-          name="message"
-          rows={6}
-          placeholder="Tell me how I can help..."
-          required
-        />
-      </label>
+        <label>
+          Company <span className="optional-label">(Optional)</span>
+          <input
+            type="text"
+            name="company"
+            placeholder="Company or business name"
+            autoComplete="organization"
+          />
+        </label>
+
+        <label>
+          Service Needed
+          <select name="service" defaultValue="" required>
+            <option value="" disabled>Select a service</option>
+            <option value="AI Automation">AI Automation</option>
+            <option value="Virtual Assistant">Virtual Assistant</option>
+            <option value="Web Development">Web Development</option>
+            <option value="Social Media Management">Social Media Management</option>
+            <option value="Graphic Design">Graphic Design</option>
+            <option value="Administrative Support">Administrative Support</option>
+            <option value="Ecommerce Support">Ecommerce Support</option>
+            <option value="Customer Support">Customer Support</option>
+            <option value="General Inquiry">General Inquiry</option>
+            <option value="Other">Other</option>
+          </select>
+        </label>
+
+        <label className="contact-field-wide">
+          Estimated Budget
+          <select name="budget" defaultValue="">
+            <option value="">Select a budget range (optional)</option>
+            <option value="Under $500">Under $500</option>
+            <option value="$500–$1,000">$500–$1,000</option>
+            <option value="$1,000–$3,000">$1,000–$3,000</option>
+            <option value="$3,000+">$3,000+</option>
+            <option value="Let's Discuss">Let&apos;s Discuss</option>
+          </select>
+        </label>
+
+        <label className="contact-field-wide">
+          Project Details
+          <textarea
+            name="message"
+            rows={6}
+            placeholder="Tell me about your project, goals, timeline, and the support you need..."
+            required
+          />
+        </label>
+      </div>
 
       <button
         className="black-btn contact-submit"
         type="submit"
         disabled={formStatus==="sending"}
       >
-        {formStatus==="sending" ? "Sending..." : "Send Message"}
+        {formStatus==="sending" ? "Sending..." : "Start Project"}
       </button>
 
       {formStatus==="success" && (
-        <p className="form-message success">Your message was sent successfully.</p>
+        <p className="form-message success">Your project inquiry was sent successfully.</p>
       )}
 
       {formStatus==="error" && (
@@ -849,6 +1128,7 @@ export default function Home(){
       <a href="#about">About</a>
       <a href="#certificates">Certificates</a>
       <a href="#experience">Experience</a>
+      <a href="#testimonials">Testimonials</a>
     </div>
 
     <div className="footer-links">
