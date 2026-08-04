@@ -184,7 +184,7 @@ export const chatbotAnswers: ChatbotAnswer[] = [
       "invoice automation"
     ],
     answer:
-      "Michael builds practical automation systems using n8n, Next.js, APIs, Supabase, Google Workspace, and Slack. InvoiceFlow AI is a live example: users upload an invoice through a dashboard, the workflow extracts and validates the data, detects duplicates, stores the original file, saves line items, and sends a team notification."
+      "Michael builds practical automation systems using n8n, Next.js, APIs, Supabase, Google Workspace, and Slack. His automation portfolio includes HireFlow AI, LeadFlow AI, ContentFlow AI, SupportFlow AI, ProposalFlow AI, and InvoiceFlow AI. Each project has a dedicated case-study page showing the workflow, connected tools, and operational result."
   },
 
   {

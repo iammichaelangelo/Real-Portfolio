@@ -131,9 +131,12 @@ export default function ProjectPage({
         style={{scaleX:progress}}
       />
 
-      <a className="sticky-back-button" href="/#portfolio">
+      <a
+        className="sticky-back-button"
+        href={project.kind==="automation" ? "/projects/automation-projects" : "/#portfolio"}
+      >
         <ArrowLeft size={18}/>
-        Back to Portfolio
+        {project.kind==="automation" ? "Back to Automations" : "Back to Portfolio"}
       </a>
 
       <section className="project-detail-hero shell">

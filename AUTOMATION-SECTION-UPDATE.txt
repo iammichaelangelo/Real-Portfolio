@@ -1,17 +1,9 @@
 AUTOMATION PORTFOLIO UPDATE
 
-Added:
-- New Automation Systems section on the homepage
-- InvoiceFlow AI project showcase with dashboard, workflow, and results screenshots
-- Live Dashboard and View Case Study buttons
-- Dedicated /projects/invoiceflow-ai case-study page
-- Processing route: Dashboard → n8n → Groq → Supabase → Google Drive → Slack
-- New automation tool icons
-- Automation navigation links on desktop, mobile, and footer
-- InvoiceFlow information in the portfolio chatbot
-
-Live dashboard URL:
-https://invoice-automation-rosy.vercel.app
-
-Deployment:
-Upload the updated project to the existing GitHub repository and deploy through Vercel as usual.
+- Removed the long standalone Automation Systems section from the homepage.
+- Added Automation Projects as the eighth card in the existing Latest Works slider.
+- Added a dedicated /projects/automation-projects directory page.
+- Listed HireFlow AI, LeadFlow AI, ContentFlow AI, SupportFlow AI, ProposalFlow AI, and InvoiceFlow AI.
+- Each automation card opens its own full project page.
+- Added simple placeholder SVG covers that can be replaced later in public/images/projects/automation-projects/.
+- Kept the Automations navigation link, but it now opens the separate directory page instead of adding homepage length.
