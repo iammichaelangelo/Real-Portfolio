@@ -11,6 +11,9 @@ export type Project = {
   summary: {title:string;text:string}[];
   type?: "image" | "video";
   videos?: {src:string;poster?:string;title:string}[];
+  kind?: "standard" | "automation";
+  workflow?: string[];
+  highlights?: string[];
 };
 
 export const projects: Project[] = [
@@ -298,6 +301,87 @@ export const projects: Project[] = [
   }
 ];
 
+
+export const automationProjects: Project[] = [
+  {
+    slug: "invoiceflow-ai",
+    category: "Automation System",
+    title: "InvoiceFlow AI",
+    subtitle: "An end-to-end invoice processing system that turns uploaded documents into searchable records, stored files, and team notifications",
+    tools: [
+      "Next.js",
+      "TypeScript",
+      "n8n",
+      "Groq",
+      "Supabase",
+      "Google Drive",
+      "Slack",
+      "Railway",
+      "Vercel"
+    ],
+    cover: "/images/projects/invoiceflow-ai/cover.png",
+    gallery: [
+      "/images/projects/invoiceflow-ai/dashboard-overview.png",
+      "/images/projects/invoiceflow-ai/workflow-canvas.png",
+      "/images/projects/invoiceflow-ai/workflow-success.png",
+      "/images/projects/invoiceflow-ai/invoice-records.png"
+    ],
+    gallerySections: [
+      {
+        title: "Live Operations Dashboard",
+        subtitle: "A responsive dashboard for uploading, monitoring, searching, and reviewing invoice records in one place.",
+        liveUrl: "https://invoice-automation-rosy.vercel.app",
+        liveLabel: "Open Live Dashboard",
+        images: [
+          "/images/projects/invoiceflow-ai/dashboard-overview.png",
+          "/images/projects/invoiceflow-ai/invoice-records.png"
+        ]
+      },
+      {
+        title: "Automated Processing Workflow",
+        subtitle: "The n8n workflow validates every upload, extracts structured invoice data, checks duplicates, stores the file, and returns the final result.",
+        images: [
+          "/images/projects/invoiceflow-ai/workflow-canvas.png",
+          "/images/projects/invoiceflow-ai/workflow-success.png"
+        ]
+      }
+    ],
+    liveUrl: "https://invoice-automation-rosy.vercel.app",
+    kind: "automation",
+    workflow: [
+      "Dashboard",
+      "n8n",
+      "Groq",
+      "Supabase",
+      "Google Drive",
+      "Slack"
+    ],
+    highlights: [
+      "PDF, PNG, and JPG upload",
+      "Duplicate invoice detection",
+      "Vendor and line-item extraction",
+      "Google Drive file storage",
+      "Live Slack notifications"
+    ],
+    summary: [
+      {
+        title: "Challenge",
+        text: "Manual invoice entry takes time, creates inconsistent records, and makes duplicate files difficult to catch."
+      },
+      {
+        title: "Solution",
+        text: "InvoiceFlow connects a Next.js dashboard to an n8n workflow that extracts, validates, stores, and routes invoice information automatically."
+      },
+      {
+        title: "Result",
+        text: "Invoices become searchable records within seconds, while original files, line items, duplicate status, and team notifications stay connected."
+      }
+    ]
+  }
+];
+
+export const allProjects = [...projects, ...automationProjects];
+
 export function getProject(slug:string){
-  return projects.find((project)=>project.slug===slug);
+  return allProjects.find((project)=>project.slug===slug);
 }

@@ -2,10 +2,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import {AnimatePresence,motion,useScroll,useTransform} from "framer-motion";
-import {ArrowUp,Menu,Moon,RotateCcw,Sun,ChevronLeft,ChevronRight,X} from "lucide-react";
+import {ArrowUp,Menu,Moon,RotateCcw,Sun,ChevronLeft,ChevronRight,X,ExternalLink,ArrowRight,CheckCircle2} from "lucide-react";
 import {FormEvent,useEffect,useRef,useState} from "react";
 import { Download } from "lucide-react";
-import {projects} from "@/data/projects";
+import {projects,automationProjects} from "@/data/projects";
 import {certificates} from "@/data/certificates";
 import {useRouter} from "next/navigation";
 import PortfolioChatbot from "@/components/PortfolioChatbot";
@@ -90,7 +90,7 @@ export default function Home(){
  const heroNameOpacity=useTransform(scrollYProgress,[0,.28],[1,.18]);
 
  useEffect(()=>{
-   projects.forEach((project)=>{
+   [...projects,...automationProjects].forEach((project)=>{
      router.prefetch(`/projects/${project.slug}`);
    });
  },[router]);
@@ -225,7 +225,7 @@ export default function Home(){
    transition={{duration:.7}}
   >
     <a className="logo" href="#">Michael Angelo</a>
-    <nav><a href="#portfolio">Portfolio</a><a href="#certificates">Certificates</a><a href="#experience">Experience</a><a href="#testimonials">Testimonials</a><a href="#contact">Contact</a></nav>
+    <nav><a href="#portfolio">Portfolio</a><a href="#automations">Automations</a><a href="#certificates">Certificates</a><a href="#experience">Experience</a><a href="#testimonials">Testimonials</a><a href="#contact">Contact</a></nav>
     <MagneticLink className="black-btn" href="#contact">Get In Touch</MagneticLink>
     <button
       className="theme-toggle"
@@ -268,6 +268,7 @@ export default function Home(){
           transition={{duration:.22}}
         >
           <a href="#portfolio" onClick={()=>setMobileMenuOpen(false)}>Portfolio</a>
+          <a href="#automations" onClick={()=>setMobileMenuOpen(false)}>Automations</a>
           <a href="#certificates" onClick={()=>setMobileMenuOpen(false)}>Certificates</a>
           <a href="#experience" onClick={()=>setMobileMenuOpen(false)}>Experience</a>
           <a href="#testimonials" onClick={()=>setMobileMenuOpen(false)}>Testimonials</a>
@@ -467,6 +468,136 @@ export default function Home(){
     </div>
 
     
+  </motion.section>
+
+  <motion.section
+    id="automations"
+    className="automation-showcase shell"
+    variants={stagger}
+    initial="hidden"
+    whileInView="show"
+    viewport={{once:true,amount:.08}}
+  >
+    <motion.header className="automation-section-heading" variants={reveal}>
+      <div>
+        <p className="blue-note">#Automation Systems</p>
+        <h2>Workflows built to<br/>handle real operations</h2>
+      </div>
+      <p>
+        Functional systems that connect user interfaces, automation workflows,
+        databases, file storage, and team notifications.
+      </p>
+    </motion.header>
+
+    <div className="automation-projects-list">
+      {automationProjects.map((project,index)=>(
+        <motion.article
+          className="automation-project"
+          key={project.slug}
+          variants={reveal}
+        >
+          <header className="automation-project-header">
+            <div className="automation-project-title">
+              <span>{String(index+1).padStart(2,"0")}</span>
+              <div>
+                <p>{project.category}</p>
+                <h3>{project.title}</h3>
+              </div>
+            </div>
+
+            <p className="automation-project-description">{project.subtitle}</p>
+
+            <div className="automation-project-actions">
+              {project.liveUrl && (
+                <a
+                  className="automation-live-button"
+                  href={project.liveUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Live Dashboard
+                  <ExternalLink size={16}/>
+                </a>
+              )}
+              <Link
+                className="automation-case-button"
+                href={`/projects/${project.slug}`}
+                prefetch={true}
+              >
+                View Case Study
+                <ArrowRight size={16}/>
+              </Link>
+            </div>
+          </header>
+
+          <div className="automation-media-grid">
+            <Link
+              href={`/projects/${project.slug}`}
+              className="automation-main-shot"
+              aria-label={`View ${project.title} case study`}
+            >
+              <FadeImage
+                src="/images/projects/invoiceflow-ai/dashboard-overview.png"
+                alt="InvoiceFlow live operations dashboard"
+                fill
+                sizes="(max-width: 900px) 100vw, 68vw"
+              />
+            </Link>
+
+            <div className="automation-side-shots">
+              <Link
+                href={`/projects/${project.slug}`}
+                className="automation-side-shot"
+                aria-label="View InvoiceFlow automation workflow"
+              >
+                <FadeImage
+                  src="/images/projects/invoiceflow-ai/workflow-success.png"
+                  alt="Successful InvoiceFlow n8n workflow execution"
+                  fill
+                  sizes="(max-width: 900px) 100vw, 30vw"
+                />
+                <span>Workflow</span>
+              </Link>
+              <Link
+                href={`/projects/${project.slug}`}
+                className="automation-side-shot"
+                aria-label="View InvoiceFlow processed invoice records"
+              >
+                <FadeImage
+                  src="/images/projects/invoiceflow-ai/invoice-records.png"
+                  alt="Processed and duplicate invoice records"
+                  fill
+                  sizes="(max-width: 900px) 100vw, 30vw"
+                />
+                <span>Results</span>
+              </Link>
+            </div>
+          </div>
+
+          {project.workflow && (
+            <div className="automation-route" aria-label="InvoiceFlow processing route">
+              {project.workflow.map((step,stepIndex)=>(
+                <div className="automation-route-step" key={step}>
+                  <span>{step}</span>
+                  {stepIndex<project.workflow!.length-1 && <ArrowRight size={15}/>}
+                </div>
+              ))}
+            </div>
+          )}
+
+          {project.highlights && (
+            <div className="automation-highlights">
+              {project.highlights.map((highlight)=>(
+                <span key={highlight}>
+                  <CheckCircle2 size={15}/>
+                  {highlight}
+                </span>
+              ))}
+            </div>
+          )}
+        </motion.article>
+      ))}
+    </div>
   </motion.section>
 
   <motion.section
@@ -1134,6 +1265,7 @@ export default function Home(){
     <div className="footer-links">
       <span>Quick Links</span>
       <a href="#portfolio">Portfolio</a>
+      <a href="#automations">Automations</a>
       <a href="#faqs">FAQs</a>
       <a href="#contact">Contact</a>
     </div>

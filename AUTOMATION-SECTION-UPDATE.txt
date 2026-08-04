@@ -1,0 +1,17 @@
+AUTOMATION PORTFOLIO UPDATE
+
+Added:
+- New Automation Systems section on the homepage
+- InvoiceFlow AI project showcase with dashboard, workflow, and results screenshots
+- Live Dashboard and View Case Study buttons
+- Dedicated /projects/invoiceflow-ai case-study page
+- Processing route: Dashboard → n8n → Groq → Supabase → Google Drive → Slack
+- New automation tool icons
+- Automation navigation links on desktop, mobile, and footer
+- InvoiceFlow information in the portfolio chatbot
+
+Live dashboard URL:
+https://invoice-automation-rosy.vercel.app
+
+Deployment:
+Upload the updated project to the existing GitHub repository and deploy through Vercel as usual.

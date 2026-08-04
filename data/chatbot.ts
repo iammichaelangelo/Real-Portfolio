@@ -173,6 +173,22 @@ export const chatbotAnswers: ChatbotAnswer[] = [
 
   {
     keywords: [
+      "automation experience",
+      "ai automation",
+      "automation projects",
+      "invoiceflow",
+      "invoice flow",
+      "n8n experience",
+      "workflow automation",
+      "automated workflows",
+      "invoice automation"
+    ],
+    answer:
+      "Michael builds practical automation systems using n8n, Next.js, APIs, Supabase, Google Workspace, and Slack. InvoiceFlow AI is a live example: users upload an invoice through a dashboard, the workflow extracts and validates the data, detects duplicates, stores the original file, saves line items, and sends a team notification."
+  },
+
+  {
+    keywords: [
       "what tools does he use",
       "tools he uses",
       "software he uses",

@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import {notFound} from "next/navigation";
-import {ArrowLeft,ArrowUp,ChevronLeft,ChevronRight,ExternalLink,X} from "lucide-react";
+import {ArrowLeft,ArrowUp,ChevronLeft,ChevronRight,ExternalLink,X,ArrowRight} from "lucide-react";
 import {motion,useScroll,useSpring} from "framer-motion";
 import {useEffect,useState,use} from "react";
 import {getProject} from "@/data/projects";
@@ -44,6 +44,12 @@ const toolIcons: Record<string, string> = {
   "Meta": "/images/icons/meta.png",
   "Buffer": "/images/icons/buffer.png",
   "Sheets": "/images/icons/sheets.png",
+  "Next.js": "/images/icons/nextjs.svg",
+  "TypeScript": "/images/icons/typescript.svg",
+  "n8n": "/images/icons/n8n.svg",
+  "Groq": "/images/icons/groq.svg",
+  "Supabase": "/images/icons/supabase.svg",
+  "Railway": "/images/icons/railway.svg",
 };
 
 export default function ProjectPage({
@@ -119,7 +125,7 @@ export default function ProjectPage({
   }
 
   return (
-    <main className="project-detail-page">
+    <main className={`project-detail-page ${project.kind==="automation" ? "project-detail-automation" : ""}`}>
       <motion.div
         className="project-progress"
         style={{scaleX:progress}}
@@ -135,6 +141,19 @@ export default function ProjectPage({
           <p className="project-category">#{project.category.replaceAll(" ","")}</p>
           <h1>{project.title}</h1>
           <p className="project-subtitle">{project.subtitle}</p>
+          {project.liveUrl && (
+            <div className="project-detail-live-actions">
+              <a
+                className="project-live-site-button"
+                href={project.liveUrl}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Open Live Dashboard
+                <ExternalLink size={16}/>
+              </a>
+            </div>
+          )}
         </div>
 
         <div className="project-tools-block">
@@ -148,6 +167,17 @@ export default function ProjectPage({
           </div>
         </div>
       </section>
+
+      {project.kind==="automation" && project.workflow && (
+        <section className="project-system-route" aria-label={`${project.title} system route`}>
+          {project.workflow.map((step,index)=>(
+            <div className="project-system-route-step" key={step}>
+              <span>{step}</span>
+              {index<project.workflow!.length-1 && <ArrowRight size={16}/>}
+            </div>
+          ))}
+        </section>
+      )}
 
       {project.type==="video" ? (
         <section className="project-video-gallery shell">
