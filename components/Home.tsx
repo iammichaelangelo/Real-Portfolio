@@ -366,7 +366,7 @@ export default function Home(){
 
 <motion.a
   className="template-pill"
-  href="/resume/Michael-Angelo-L.-Acuña_RESUME.pdf"
+  href="/resume/Michael_Angelo_Acuña_Resume.pdf"
   download
   initial={{ opacity: 0, x: 35 }}
   animate={{ opacity: 1, x: 0 }}
