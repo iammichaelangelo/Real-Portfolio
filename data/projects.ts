@@ -165,24 +165,18 @@ export const projects: Project[] = [
     ]
   },
   {
-    slug:"coffee-shop-brochure",
-    category:"Habits",
-    title:"Personal Projects",
-    subtitle:"Eye-catching thumbnails designed to improve clicks, readability, and viewer engagement",
-    tools:["Canva","Photoshop","Pinterest","Freepik"],
-    cover:"/images/projects/habits/cover.png",
-    gallery:[
-      "/images/projects/habits/habit-1.png",
-      "/images/projects/habits/habit-2.png",
-      "/images/projects/habits/habit-3.png",
-      "/images/projects/habits/habit-4.png",
-      "/images/projects/habits/habit-5.png",
-
-    ],
+    slug:"automation-projects",
+    category:"Automation Systems",
+    title:"Automation Projects",
+    subtitle:"A collection of connected systems for hiring, lead management, content, support, proposals, and invoice processing",
+    tools:["n8n","Next.js","TypeScript","Supabase","Slack","Google Drive"],
+    cover:"/images/projects/automation-projects/cover.png",
+    gallery:[],
+    kind:"automation-index",
     summary:[
-      {title:"Purpose",text:"A collection of personal projects that showcase productivity, habit tracking, learning resources, and self-improvement ideas."},
-      {title:"Approach",text:"Designed with clean, organized layouts that make information easy to understand and visually engaging."},
-      {title:"Result",text:"Creative personal projects that demonstrate consistency, organization, and practical design skills."}
+      {title:"Purpose",text:"Present practical automation systems in one organized gallery without making the homepage longer."},
+      {title:"Approach",text:"Each system has its own case-study page showing the workflow, connected tools, and operational result."},
+      {title:"Result",text:"Visitors can quickly browse the automation portfolio and open only the systems they want to review."}
     ]
   },
     {
@@ -206,6 +200,27 @@ export const projects: Project[] = [
       {title:"Purpose",text:"Create compelling YouTube thumbnails that capture attention and encourage viewers to click."},
       {title:"Approach",text:"Used bold typography, expressive compositions, strong contrast, and clear visual hierarchy to maximize readability."},
       {title:"Result",text:"Professional thumbnail concepts suitable for educational, entertainment, lifestyle, and promotional content."}
+    ]
+  },
+    {
+    slug:"coffee-shop-brochure",
+    category:"Habits",
+    title:"Personal Projects",
+    subtitle:"Eye-catching thumbnails designed to improve clicks, readability, and viewer engagement",
+    tools:["Canva","Photoshop","Pinterest","Freepik"],
+    cover:"/images/projects/habits/cover.png",
+    gallery:[
+      "/images/projects/habits/habit-1.png",
+      "/images/projects/habits/habit-2.png",
+      "/images/projects/habits/habit-3.png",
+      "/images/projects/habits/habit-4.png",
+      "/images/projects/habits/habit-5.png",
+
+    ],
+    summary:[
+      {title:"Purpose",text:"A collection of personal projects that showcase productivity, habit tracking, learning resources, and self-improvement ideas."},
+      {title:"Approach",text:"Designed with clean, organized layouts that make information easy to understand and visually engaging."},
+      {title:"Result",text:"Creative personal projects that demonstrate consistency, organization, and practical design skills."}
     ]
   },
   {
@@ -299,155 +314,224 @@ export const projects: Project[] = [
       {title:"Result",text:"Professional branding presentations that help businesses establish a recognizable and cohesive visual identity."}
     ]
   }
-  ,{
-    slug:"automation-projects",
-    category:"Automation Systems",
-    title:"Automation Projects",
-    subtitle:"A collection of connected systems for hiring, lead management, content, support, proposals, and invoice processing",
-    tools:["n8n","Next.js","TypeScript","Supabase","Slack","Google Drive"],
-    cover:"/images/projects/automation-projects/cover.svg",
-    gallery:[],
-    kind:"automation-index",
-    summary:[
-      {title:"Purpose",text:"Present practical automation systems in one organized gallery without making the homepage longer."},
-      {title:"Approach",text:"Each system has its own case-study page showing the workflow, connected tools, and operational result."},
-      {title:"Result",text:"Visitors can quickly browse the automation portfolio and open only the systems they want to review."}
-    ]
-  }
+
 
 ];
 
 
 export const automationProjects: Project[] = [
   {
-    slug:"hireflow-ai",
-    category:"Hiring Automation",
-    title:"HireFlow AI",
-    subtitle:"An applicant-screening workflow that parses resumes, evaluates experience and skills, organizes candidates, and prepares interview communication.",
-    tools:["n8n","Groq","Sheets","Gmail","Slack","Google Drive"],
-    cover:"/images/projects/automation-projects/hireflow-ai.svg",
-    gallery:["/images/projects/automation-projects/hireflow-ai.svg"],
+    slug:"invoiceflow-ai",
+    category:"Invoice Automation",
+    title:"InvoiceFlow AI",
+    subtitle:"An end-to-end invoice processing system that validates uploaded documents, extracts structured financial data, stores the original file, and keeps the finance team updated.",
+    tools:["Next.js","TypeScript","n8n","Groq","Supabase","Google Drive","Slack","Railway","Vercel"],
+    cover:"/images/projects/invoiceflow-ai/invopage3.png",
+    gallery:[
+      "/images/projects/invoiceflow-ai/invopage1.png",
+      "/images/projects/invoiceflow-ai/invopage2.png",
+      "/images/projects/invoiceflow-ai/invopage3.png",
+      "/images/projects/invoiceflow-ai/invopage4.png",
+    ],
     kind:"automation",
-    workflow:["Resume","n8n","AI Scoring","Google Sheets","Gmail","Slack"],
-    highlights:["Resume parsing","Candidate scoring","Duplicate detection","Interview email drafts","Recruitment notifications"],
+    workflow:["Invoice Upload","Validation","Duplicate Check","AI Extraction","Supabase","Google Drive","Slack"],
+    highlights:[
+      "PDF, PNG, and JPG invoice uploads",
+      "File-hash and invoice-number duplicate detection",
+      "Vendor, dates, totals, balances, and line-item extraction",
+      "Confidence scoring and human-review flags",
+      "Original-file storage in Google Drive",
+      "Searchable Supabase invoice and line-item records",
+      "Live Slack processing notifications"
+    ],
     summary:[
-      {title:"Challenge",text:"Reviewing applications manually makes it difficult to compare candidates consistently and respond quickly."},
-      {title:"Solution",text:"HireFlow reads each resume, calculates relevant experience, scores the candidate against the role, and organizes the result in an applicant tracker."},
-      {title:"Result",text:"Recruiters receive structured candidate records, recommendations, and ready-to-review interview communication in one workflow."}
-    ]
-  },
-  {
-    slug:"leadflow-ai",
-    category:"Lead Automation",
-    title:"LeadFlow AI",
-    subtitle:"A lead-management workflow that qualifies inquiries, records them in a CRM, sends confirmation messages, and manages scheduled follow-ups.",
-    tools:["Next.js","n8n","Groq","Sheets","Gmail","Slack"],
-    cover:"/images/projects/automation-projects/leadflow-ai.svg",
-    gallery:["/images/projects/automation-projects/leadflow-ai.svg"],
-    kind:"automation",
-    workflow:["Contact Form","n8n","AI Qualification","CRM","Email","Slack"],
-    highlights:["Lead scoring","Intent and priority analysis","CRM record creation","Three-stage follow-ups","Team notifications"],
-    summary:[
-      {title:"Challenge",text:"New inquiries can be missed or followed up inconsistently when qualification and recordkeeping are handled manually."},
-      {title:"Solution",text:"LeadFlow analyzes each inquiry, assigns a score and priority, saves the lead to a CRM, and schedules structured follow-up stages."},
-      {title:"Result",text:"Every inquiry receives a consistent response while high-value leads are surfaced quickly for action."}
-    ]
-  },
-  {
-    slug:"contentflow-ai",
-    category:"Content Automation",
-    title:"ContentFlow AI",
-    subtitle:"A content-generation system that turns campaign details and brand information into organized platform-ready content.",
-    tools:["Next.js","TypeScript","Supabase","Groq","n8n"],
-    cover:"/images/projects/automation-projects/contentflow-ai.svg",
-    gallery:["/images/projects/automation-projects/contentflow-ai.svg"],
-    kind:"automation",
-    workflow:["Campaign Brief","Dashboard","AI Generation","Supabase","Content Library"],
-    highlights:["Brand profiles","Campaign organization","Platform-specific captions","Hashtags and calls to action","Image and video prompts"],
-    summary:[
-      {title:"Challenge",text:"Creating consistent content for several platforms takes time and often leads to scattered drafts and brand inconsistencies."},
-      {title:"Solution",text:"ContentFlow combines campaign goals, buyer intent, and brand information to generate structured content for multiple channels."},
-      {title:"Result",text:"Campaign outputs are organized in a reusable content library with captions, hashtags, calls to action, and creative prompts."}
+      {title:"Challenge",text:"Manual invoice entry is slow, prone to inconsistent formatting, and makes it difficult to identify duplicate invoices or verify extracted totals."},
+      {title:"Automation Process",text:"A user uploads an invoice through the Next.js dashboard. The n8n workflow validates the file, generates a duplicate hash, extracts the document content, and sends the data to Groq for structured invoice analysis."},
+      {title:"Data Handling",text:"Invoice details, confidence scores, review flags, and individual line items are stored in Supabase, while the original document is uploaded to Google Drive and linked back to the record."},
+      {title:"Operational Output",text:"The dashboard displays the processed invoice, total amount, extracted line items, source-file preview, duplicate status, and AI summary in one place."},
+      {title:"Result",text:"Invoices become organized and searchable within seconds, reducing repetitive data entry while keeping the document, extracted values, and team notification connected."}
     ]
   },
   {
     slug:"supportflow-ai",
     category:"Support Automation",
     title:"SupportFlow AI",
-    subtitle:"A customer-support workflow that reads incoming emails, classifies tickets, creates records, and prepares draft replies for review.",
+    subtitle:"A customer-support automation that turns incoming email conversations into organized tickets, AI-assisted summaries, prioritized queues, and draft replies for review.",
     tools:["Next.js","n8n","Groq","Supabase","Gmail","Slack","Sheets"],
-    cover:"/images/projects/automation-projects/supportflow-ai.svg",
-    gallery:["/images/projects/automation-projects/supportflow-ai.svg"],
+    cover:"/images/projects/automation-projects/supopage3.png",
+    gallery:[
+      "/images/projects/automation-projects/supopage1.png",
+      "/images/projects/automation-projects/supopage2.png",
+      "/images/projects/automation-projects/supopage3.png",
+      "/images/projects/automation-projects/supopage4.png",
+    ],
     kind:"automation",
-    workflow:["Customer Email","n8n","AI Classification","Ticket Database","Draft Reply","Slack"],
-    highlights:["Ticket IDs","Category and priority detection","Sentiment analysis","Thread-aware updates","Draft reply preparation"],
+    workflow:["Customer Email","Thread Detection","AI Classification","Ticket Database","Gmail Draft","Slack Alert"],
+    highlights:[
+      "Automatic support ticket IDs",
+      "Intent, category, priority, and sentiment detection",
+      "AI summaries and customer-request extraction",
+      "Thread-aware ticket updates",
+      "Human-review and recommended-action fields",
+      "Gmail draft replies created in the original thread",
+      "Urgent-ticket notifications in Slack"
+    ],
     summary:[
-      {title:"Challenge",text:"Support teams need to organize incoming requests quickly while keeping replies accurate and connected to the existing email thread."},
-      {title:"Solution",text:"SupportFlow classifies each email, summarizes the request, creates or updates a ticket, and prepares a response draft for human review."},
-      {title:"Result",text:"The support queue becomes searchable and easier to prioritize, with the original message, ticket context, and draft response kept together."}
+      {title:"Challenge",text:"Support teams need to organize incoming requests quickly without losing the context of the original email conversation or overlooking urgent issues."},
+      {title:"Automation Process",text:"SupportFlow reads unread Gmail messages, identifies whether the message belongs to a new or existing thread, and uses AI to classify the request, priority, sentiment, and recommended next action."},
+      {title:"Ticket Management",text:"The workflow creates or updates a structured ticket in Supabase and Google Sheets, preserving the message ID, thread ID, customer details, summary, status, and follow-up information."},
+      {title:"Human-in-the-Loop Reply",text:"Instead of sending an uncontrolled response, the system prepares a Gmail draft in the same thread so a support representative can review and send it."},
+      {title:"Result",text:"The support queue becomes easier to search and prioritize, while the customer message, AI analysis, ticket history, draft response, and Slack alert remain connected."}
+    ]
+  },
+  {
+    slug:"hireflow-ai",
+    category:"Hiring Automation",
+    title:"HireFlow AI",
+    subtitle:"A two-workflow recruitment system that screens resumes, scores candidates, maintains a live ATS, and automatically records completed interview bookings.",
+    tools:["Next.js","TypeScript","n8n","Groq","Sheets","Gmail","Slack","Calendar","Calendly","Google Drive"],
+    cover:"/images/projects/automation-projects/hirapage3.png",
+    gallery:[
+      "/images/projects/automation-projects/hirapage1.png",
+      "/images/projects/automation-projects/hirapage2.png",
+      "/images/projects/automation-projects/hirapage3.png",
+      "/images/projects/automation-projects/hirapage4.png",
+      "/images/projects/automation-projects/hirapage5.png",
+      "/images/projects/automation-projects/hirapage6.png",
+      "/images/projects/automation-projects/hirapage7.png",
+      "/images/projects/automation-projects/hirapage8.png",
+      "/images/projects/automation-projects/hirapage9.png",
+      "/images/projects/automation-projects/hirapage10.png",
+      "/images/projects/automation-projects/hirapage11.png",
+    ],
+    kind:"automation",
+    workflow:["Resume Application","Resume Screening Workflow","AI Scoring","Google Sheets ATS","Booking Tracker","Google Calendar","Slack"],
+    highlights:[
+      "Two connected n8n workflows",
+      "Resume parsing and employment-timeline analysis",
+      "Candidate scoring, recommendation, strengths, and concerns",
+      "Duplicate-applicant detection",
+      "Live Google Sheets ATS and private admin dashboard",
+      "Interview invitation and Calendly booking flow",
+      "Automatic interview date, time, link, and calendar-event updates",
+      "Recruitment notifications through Gmail and Slack"
+    ],
+    summary:[
+      {title:"Challenge",text:"Reviewing resumes manually makes candidate comparison inconsistent, slows down communication, and requires recruiters to update interview records by hand."},
+      {title:"Main Workflow: Resume Screening",text:"The public application form sends the resume and applicant details to n8n. The workflow extracts the resume content, calculates relevant experience, identifies skills, scores the candidate, detects duplicates, and saves the structured result to the Google Sheets ATS."},
+      {title:"Candidate Communication",text:"Qualified applicants can receive interview communication while the recruitment team receives a Slack update containing the applicant summary, score, recommendation, and next action."},
+      {title:"Connected Workflow: ATS – Interview Booking Tracker",text:"A separate scheduled n8n workflow checks Google Calendar for new Calendly bookings, extracts the attendee email and Candidate ID, matches the correct ATS row, and updates the interview date, time, Zoom link, calendar event ID, and status."},
+      {title:"Dashboard",text:"The protected sticky-note admin dashboard reads the live ATS data and organizes applicants by stage, score, recommendation, experience, and scheduled interview information."},
+      {title:"Result",text:"HireFlow connects application intake, AI screening, candidate records, recruiter notifications, and interview scheduling in one complete recruitment system."}
     ]
   },
   {
     slug:"proposalflow-ai",
     category:"Proposal Automation",
     title:"ProposalFlow AI",
-    subtitle:"A proposal-generation workflow that converts qualified lead information into a branded PDF, sends it by email, and reports the result to the team.",
-    tools:["n8n","Groq","Google Drive","Gmail","Slack","Railway"],
-    cover:"/images/projects/automation-projects/proposalflow-ai.svg",
-    gallery:["/images/projects/automation-projects/proposalflow-ai.svg"],
+    subtitle:"A proposal-generation workflow that transforms client requirements into a structured proposal, creates a branded PDF, delivers it by email, and records the result for the team.",
+    tools:["Next.js","n8n","Groq","Supabase","Gotenberg","Google Drive","Gmail","Slack","Railway"],
+    cover:"/images/projects/automation-projects/propo6.png",
+    gallery:[
+      "/images/projects/automation-projects/propo1.png",
+      "/images/projects/automation-projects/propo2.png",
+      "/images/projects/automation-projects/propo3.png",
+      "/images/projects/automation-projects/propo4.png",
+      "/images/projects/automation-projects/propo5.png",
+      "/images/projects/automation-projects/propo6.png",
+    ],
     kind:"automation",
-    workflow:["Lead Data","n8n","AI Proposal","PDF","Google Drive","Gmail","Slack"],
-    highlights:["Proposal IDs","Scope and package generation","PDF conversion","Drive sharing","Email delivery"],
+    workflow:["Client Requirements","AI Proposal","Supabase","HTML Template","Gotenberg PDF","Google Drive","Gmail","Slack"],
+    highlights:[
+      "Unique proposal IDs",
+      "AI-generated summary, scope, package, pricing, and timeline",
+      "Structured proposal records in Supabase",
+      "HTML-to-PDF conversion through Gotenberg",
+      "Google Drive upload and shareable file link",
+      "Automatic client email delivery",
+      "Slack delivery and value notification"
+    ],
     summary:[
-      {title:"Challenge",text:"Preparing proposals manually slows down response time and creates inconsistent pricing, scope, and formatting."},
-      {title:"Solution",text:"ProposalFlow uses lead details to generate the proposal structure, converts it into a PDF, stores it, and emails it to the prospective client."},
-      {title:"Result",text:"Qualified leads receive organized proposals faster, while the team gets a searchable record and delivery notification."}
+      {title:"Challenge",text:"Preparing proposals manually delays client response time and can produce inconsistent scope, pricing, structure, and document formatting."},
+      {title:"Automation Process",text:"The client requirements are submitted through the ProposalFlow interface and sent to n8n, where AI generates the proposal summary, recommended package, scope of work, estimated price, timeline, and client-facing content."},
+      {title:"Document Generation",text:"The proposal is inserted into a structured HTML template, converted into a PDF through Gotenberg, and uploaded to Google Drive with a shareable link."},
+      {title:"Delivery and Tracking",text:"The final proposal is emailed to the client, saved to Supabase, and reported to Slack with the proposal ID, client, package, estimated value, status, and PDF link."},
+      {title:"Result",text:"Qualified leads receive consistent and professional proposals faster, while the team retains a searchable record of every generated and delivered document."}
     ]
   },
   {
-    slug:"invoiceflow-ai",
-    category:"Invoice Automation",
-    title:"InvoiceFlow AI",
-    subtitle:"An end-to-end invoice processing system that turns uploaded documents into searchable records, stored files, and team notifications.",
-    tools:["Next.js","TypeScript","n8n","Groq","Supabase","Google Drive","Slack","Railway","Vercel"],
-    cover:"/images/projects/invoiceflow-ai/cover.png",
+    slug:"contentflow-ai",
+    category:"Content Automation",
+    title:"ContentFlow AI",
+    subtitle:"A multi-platform content system that combines reusable brand profiles and campaign briefs to generate organized, platform-ready marketing content.",
+    tools:["Next.js","TypeScript","Supabase","Groq","Vercel"],
+    cover:"/images/projects/automation-projects/cont1.png",
     gallery:[
-      "/images/projects/invoiceflow-ai/dashboard-overview.png",
-      "/images/projects/invoiceflow-ai/workflow-canvas.png",
-      "/images/projects/invoiceflow-ai/workflow-success.png",
-      "/images/projects/invoiceflow-ai/invoice-records.png"
+      "/images/projects/automation-projects/cont1.png",
+      "/images/projects/automation-projects/cont2.png",
+      "/images/projects/automation-projects/cont3.png",
+      "/images/projects/automation-projects/cont4.png",
+      "/images/projects/automation-projects/cont5.png",
+      "/images/projects/automation-projects/cont6.png",
     ],
-    gallerySections:[
-      {
-        title:"Live Operations Dashboard",
-        subtitle:"A responsive dashboard for uploading, monitoring, searching, and reviewing invoice records in one place.",
-        liveUrl:"https://invoice-automation-rosy.vercel.app",
-        liveLabel:"Open Live Dashboard",
-        images:[
-          "/images/projects/invoiceflow-ai/dashboard-overview.png",
-          "/images/projects/invoiceflow-ai/invoice-records.png"
-        ]
-      },
-      {
-        title:"Automated Processing Workflow",
-        subtitle:"The n8n workflow validates every upload, extracts structured invoice data, checks duplicates, stores the file, and returns the final result.",
-        images:[
-          "/images/projects/invoiceflow-ai/workflow-canvas.png",
-          "/images/projects/invoiceflow-ai/workflow-success.png"
-        ]
-      }
-    ],
-    liveUrl:"https://invoice-automation-rosy.vercel.app",
     kind:"automation",
-    workflow:["Dashboard","n8n","Groq","Supabase","Google Drive","Slack"],
-    highlights:["PDF, PNG, and JPG upload","Duplicate invoice detection","Vendor and line-item extraction","Google Drive file storage","Live Slack notifications"],
+    workflow:["Brand Profile","Campaign Brief","AI Generation","Supabase","Content Library","Analytics"],
+    highlights:[
+      "Reusable brand profiles",
+      "Campaign goals, buyer intent, tone, and product context",
+      "Seven platform-specific content outputs",
+      "Captions, hashtags, and calls to action",
+      "Image and video creative prompts",
+      "Saved campaign and content library",
+      "Persistent Supabase workspace data"
+    ],
     summary:[
-      {title:"Challenge",text:"Manual invoice entry takes time, creates inconsistent records, and makes duplicate files difficult to catch."},
-      {title:"Solution",text:"InvoiceFlow connects a Next.js dashboard to an n8n workflow that extracts, validates, stores, and routes invoice information automatically."},
-      {title:"Result",text:"Invoices become searchable records within seconds, while original files, line items, duplicate status, and team notifications stay connected."}
+      {title:"Challenge",text:"Creating consistent content for several platforms takes time and often leads to scattered drafts, repeated work, and an inconsistent brand voice."},
+      {title:"Brand Foundation",text:"Users can save reusable brand profiles containing the business description, website, target audience, and default tone, allowing future campaign forms to be completed faster."},
+      {title:"Campaign Generation",text:"ContentFlow combines the brand profile with the campaign description, buyer-intent keyword, tone, and goal to create separate content for Instagram, Facebook, LinkedIn, Google Business, Pinterest, X, and Threads."},
+      {title:"Content Organization",text:"Generated captions, hashtags, calls to action, image prompts, and video prompts are stored in Supabase and organized inside the campaign library for later review and reuse."},
+      {title:"Result",text:"One campaign brief becomes a structured multi-platform content package while the brand settings, campaign history, and generated posts remain permanently available in the workspace."}
     ]
-  }
+  },
+  {
+    slug:"leadflow-ai",
+    category:"Lead Automation",
+    title:"LeadFlow AI",
+    subtitle:"A two-workflow lead-management system that qualifies portfolio inquiries, records them in a CRM, sends immediate responses, and manages scheduled follow-ups until the lead replies or the sequence is completed.",
+    tools:["Next.js","n8n","Google Gemini","Google Sheets","Gmail","Slack"],
+    cover:"/images/projects/automation-projects/lead3.png",
+    gallery:[
+      "/images/projects/automation-projects/lead1.png",
+      "/images/projects/automation-projects/lead2.png",
+      "/images/projects/automation-projects/lead3.png",
+      "/images/projects/automation-projects/lead4.png",
+      "/images/projects/automation-projects/lead5.png",
+      "/images/projects/automation-projects/lead6.png",
+      "/images/projects/automation-projects/lead7.png",
+    ],
+    kind:"automation",
+    workflow:["Portfolio Contact Form","Lead Qualification Workflow","AI Scoring","Google Sheets CRM","Confirmation","Slack","Follow-Up Manager"],
+    highlights:[
+      "Two connected n8n workflows",
+      "Lead score, priority, intent, business type, and sentiment analysis",
+      "AI summary, services needed, and recommended next step",
+      "Automatic Google Sheets CRM creation",
+      "Immediate confirmation email and Slack notification",
+      "Three-stage scheduled follow-up sequence",
+      "CRM stage, last-contact, next-follow-up, and status updates",
+      "Automatic closure after the final no-response stage"
+    ],
+    summary:[
+      {title:"Challenge",text:"New portfolio inquiries can be missed, assessed inconsistently, or forgotten when lead qualification, recordkeeping, and follow-up are handled manually."},
+      {title:"Main Workflow: Lead Qualification",text:"The portfolio contact form sends each inquiry to n8n. AI analyzes the request and returns a lead score, priority, intent, business type, sentiment, services needed, summary, and recommended next step."},
+      {title:"CRM and Immediate Response",text:"The qualified lead is saved to Google Sheets with its follow-up stage and next-contact date. The system also sends a confirmation email to the prospect and a detailed lead notification to Slack."},
+      {title:"Connected Workflow: LeadFlow AI – Follow-Up Manager",text:"A separate scheduled n8n workflow reads the CRM, checks the next-follow-up date and current stage, and sends Follow-Up 1, Follow-Up 2, or the final follow-up. After each email, it updates the same CRM row with the new stage, last-contact date, next-follow-up date, and status."},
+      {title:"Completion Logic",text:"When the third follow-up is completed without a response, the workflow can mark the lead as Closed – No Response, preventing the same sequence from continuing indefinitely."},
+      {title:"Result",text:"Every inquiry receives a consistent first response and structured follow-up, while high-value leads are surfaced quickly and the full contact history remains visible in one CRM."}
+    ]
+  },
 ];
+
 export const allProjects = [...projects, ...automationProjects];
 
 export function getProject(slug:string){

@@ -19,6 +19,7 @@ const toolIcons: Record<string, string> = {
   "CSS": "/images/icons/css.png",
   "Trello": "/images/icons/trello.png",
   "Calendly": "/images/icons/calendly.png",
+  "Calendar": "/images/icons/calendar.png",
   "Vercel": "/images/icons/vercel.png",
   "Freepik": "/images/icons/freepik.png",
 
@@ -44,12 +45,12 @@ const toolIcons: Record<string, string> = {
   "Meta": "/images/icons/meta.png",
   "Buffer": "/images/icons/buffer.png",
   "Sheets": "/images/icons/sheets.png",
-  "Next.js": "/images/icons/nextjs.svg",
-  "TypeScript": "/images/icons/typescript.svg",
-  "n8n": "/images/icons/n8n.svg",
-  "Groq": "/images/icons/groq.svg",
-  "Supabase": "/images/icons/supabase.svg",
-  "Railway": "/images/icons/railway.svg",
+  "Next.js": "/images/icons/nextjs.png",
+  "TypeScript": "/images/icons/typescript.png",
+  "n8n": "/images/icons/n8n.png",
+  "Groq": "/images/icons/groq.png",
+  "Supabase": "/images/icons/supabase.png",
+  "Railway": "/images/icons/railway.png",
 };
 
 export default function ProjectPage({
