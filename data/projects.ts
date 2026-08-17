@@ -321,6 +321,73 @@ export const projects: Project[] = [
 
 export const automationProjects: Project[] = [
   {
+  slug:"proposalflow-pro",
+  category:"Business Process Automation",
+  title:"ProposalFlow Pro",
+  subtitle:"An end-to-end proposal automation system that handles sales intake, pricing, AI-assisted risk review, approvals, proposal generation, versioning, delivery, audit logging, and recovery workflows.",
+  tools:["n8n","Groq","Supabase","Gotenberg","Gmail","Railway"],
+  cover:"/images/projects/automation-projects/auto1.png",
+  gallery:[
+    "/images/projects/automation-projects/auto1.png",
+    "/images/projects/automation-projects/auto2.png",
+    "/images/projects/automation-projects/auto3.png",
+    "/images/projects/automation-projects/auto4.png",
+  ],
+  kind:"automation",
+  workflow:[
+    "Sales Intake",
+    "Validation",
+    "Pricing Engine",
+    "AI Risk Review",
+    "Human Approval",
+    "PDF Generation",
+    "Version Control",
+    "Email Delivery",
+    "Audit Logging",
+    "Recovery"
+  ],
+  highlights:[
+    "Multi-stage sales intake and proposal review workflow",
+    "Centralized and deterministic pricing calculations",
+    "Input validation and normalization before processing",
+    "AI-assisted proposal risk review using Groq",
+    "Automatic routing for pricing and manager review",
+    "Human-in-the-loop sales and approval decisions",
+    "Automated proposal PDF generation with Gotenberg",
+    "Proposal versioning and controlled repricing",
+    "Supabase-backed proposal records and audit logs",
+    "Automated email delivery and delivery tracking",
+    "Recovery workflow for failed or incorrect deliveries",
+    "Duplicate protection and structured error handling"
+  ],
+  summary:[
+    {
+      title:"Challenge",
+      text:"Creating business proposals manually can involve repetitive data entry, inconsistent pricing decisions, multiple approval steps, document generation, and follow-up actions across disconnected systems."
+    },
+    {
+      title:"Automation Process",
+      text:"ProposalFlow Pro begins with structured sales intake, validates and normalizes the submitted information, generates proposal identifiers, calculates system pricing, and routes unresolved cases for human review before continuing."
+    },
+    {
+      title:"AI & Decision Logic",
+      text:"Once pricing is resolved, proposal information is prepared for AI-assisted risk review. The workflow validates the AI response and combines automated checks with human approval paths so important business decisions remain controlled."
+    },
+    {
+      title:"Proposal Generation",
+      text:"Approved proposal data is converted into a formatted proposal, rendered as a PDF through Gotenberg, validated, stored, and linked back to the proposal record while each major processing event is recorded in the audit trail."
+    },
+    {
+      title:"Versioning & Recovery",
+      text:"The system supports proposal revisions, repricing, new proposal versions, delivery reconciliation, recipient corrections, duplicate-send prevention, and dedicated recovery paths when processing or delivery does not complete successfully."
+    },
+    {
+      title:"Result",
+      text:"The workflow connects proposal intake, pricing, AI review, human decisions, document generation, delivery, and recovery into one traceable automation system, reducing repetitive work while keeping critical decisions and exceptions visible."
+    }
+  ]
+},
+  {
     slug:"invoiceflow-ai",
     category:"Invoice Automation",
     title:"InvoiceFlow AI",
